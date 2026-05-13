@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sugarflower",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8081", "--directory", "D:\\制作物AI\\sugar\\sugarflower-structure"],
+      "port": 8081,
+      "url": "http://localhost:8081/courses/"
+    }
+  ]
+}

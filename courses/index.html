@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シュガーフラワー講座一覧｜一輪から、ブーケ、リース、シュガーケーキへ</title>
+  <meta name="description" content="シュガーフラワー講座は、はじめての一輪から、ブーケ制作、上級フラワー、リース作品、そしてシュガーケーキ装飾へと段階的に進める講座体系です。">
+  <meta property="og:title" content="シュガーフラワー講座一覧">
+  <meta property="og:description" content="一輪から、ブーケ、リース、シュガーケーキへ。全6講座の体系と学びの流れ。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../images/hero-bg.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ───── INTRO OVERLAY ───── -->
+  <div id="intro-overlay" aria-hidden="true">
+    <div class="intro-panel intro-panel--top"></div>
+    <div class="intro-panel intro-panel--bottom"></div>
+    <div class="intro-center">
+      <span class="intro-sub">Sugar Flower Lesson</span>
+      <span class="intro-name">シュガーフラワー講座</span>
+      <span class="intro-line"></span>
+    </div>
+  </div>
+
+  <!-- ───── GLOBAL HEADER ───── -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="./" class="site-header__logo">
+        シュガーフラワー講座
+        <small>Sugar Flower Lesson</small>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="メニュー">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="メニューを開閉">
+        <span></span><span></span><span></span>
+      </label>
+      <label for="nav-toggle" class="nav-overlay"></label>
+      <nav class="site-nav">
+        <ul class="site-nav__list">
+          <li><a href="./" class="is-current">講座一覧</a></li>
+          <li><a href="./beginner-guide/">はじめての方へ</a></li>
+          <li><a href="./flower-lessons/">花ごとのレッスン</a></li>
+          <li><a href="./sugar-flower-beginner/">ビギナー講座</a></li>
+          <li><a href="./high-end-flower/">ハイエンド</a></li>
+          <li><a href="./sugar-cake/">シュガーケーキ</a></li>
+          <li><a href="./faq/">FAQ</a></li>
+          <li><a href="./current/">募集中</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ───── HERO ───── -->
+  <section class="hero hero--compact hero--photo">
+    <div class="hero__photo-bg"></div>
+    <div class="container">
+      <div class="hero__inner">
+        <span class="hero__eyebrow eyebrow--italic hero-reveal-eyebrow">Sugar Flower Lesson</span>
+        <h1 class="hero__title" style="margin-bottom:10px;">
+          <span class="hero-reveal-line" style="--d:0s"><span>シュガーフラワー</span></span>
+          <span class="hero-reveal-line" style="--d:0.12s"><span>講座一覧</span></span>
+        </h1>
+        <p class="hero__subtitle hero-reveal-sub">全講座の内容と学びの流れ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── MARQUEE ───── -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-strip__track">
+      <div class="marquee-strip__segment">
+        <span class="marquee-strip__item">Sugar Flower Lesson</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">花ごとのレッスン</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">Beginner Course</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">High-end Flower</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">Wreath &amp; Arrangement</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">Wedding Sugar Cake</span>
+        <span class="marquee-strip__dot"></span>
+      </div>
+      <div class="marquee-strip__segment" aria-hidden="true">
+        <span class="marquee-strip__item">Sugar Flower Lesson</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">花ごとのレッスン</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">Beginner Course</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">High-end Flower</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">Wreath &amp; Arrangement</span>
+        <span class="marquee-strip__dot"></span>
+        <span class="marquee-strip__item">Wedding Sugar Cake</span>
+        <span class="marquee-strip__dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── COURSES INTRO ───── -->
+  <div class="editorial-intro" id="courses">
+    <span class="eyebrow eyebrow--italic anim-fade-up">All Courses</span>
+    <h2 class="section-heading section-heading--center section-heading--accent anim-fade-up anim-d1">全講座一覧</h2>
+  </div>
+
+  <!-- ───── EDITORIAL COURSE LIST ───── -->
+  <div class="editorial-courses">
+
+    <!-- 01 花ごとのレッスン — light, photo left -->
+    <article class="editorial-item anim-fade-up">
+      <div class="editorial-item__photo"
+           style="background-image: url('../images/flower-lesson.jpg'); background-position: center 30%;">
+      </div>
+      <div class="editorial-item__body">
+        <span class="editorial-num">01</span>
+        <span class="editorial-tag">入口・単発</span>
+        <h3 class="editorial-title">花ごとの<br>レッスン</h3>
+        <ul class="editorial-list">
+          <li>ライラック / スイートピー</li>
+          <li>パンジー / カサブランカ</li>
+          <li>好きな花を1輪から体験できる</li>
+        </ul>
+        <div class="editorial-result">
+          <span class="editorial-result-label">完成作品</span>
+          <span class="editorial-result-value">1輪のシュガーフラワー</span>
+        </div>
+        <a href="./flower-lessons/" class="editorial-link">詳しく見る</a>
+      </div>
+    </article>
+
+    <!-- 02 ビギナー講座 — dark, photo right -->
+    <article class="editorial-item editorial-item--rev editorial-item--dark anim-fade-up">
+      <div class="editorial-item__photo"
+           style="background-image: url('../images/beginner.png'); background-color: #0e0a12; background-size: contain; background-position: center;">
+      </div>
+      <div class="editorial-item__body">
+        <span class="editorial-num">02</span>
+        <span class="editorial-tag">基礎講座</span>
+        <h3 class="editorial-title">シュガーフラワー<br>ビギナー講座</h3>
+        <ul class="editorial-list">
+          <li>複数の花と葉の作り方</li>
+          <li>ワイヤリング・テーピング技術</li>
+          <li>花を束ねてブーケへ仕上げる</li>
+        </ul>
+        <div class="editorial-result">
+          <span class="editorial-result-label">完成作品</span>
+          <span class="editorial-result-value">シュガーフラワーブーケ</span>
+        </div>
+        <a href="./sugar-flower-beginner/" class="editorial-link">詳しく見る</a>
+      </div>
+    </article>
+
+    <!-- 03 ハイエンドフラワー — light, photo left -->
+    <article class="editorial-item anim-fade-up">
+      <div class="editorial-item__photo"
+           style="background-image: url('../images/highend-flower.jpg');">
+      </div>
+      <div class="editorial-item__body">
+        <span class="editorial-num">03</span>
+        <span class="editorial-tag">上級レッスン</span>
+        <h3 class="editorial-title">ハイエンド<br>フラワーレッスン</h3>
+        <ul class="editorial-list">
+          <li>イングリッシュROSE（高難度の花びら造形）</li>
+          <li>ハイエンドガーベラ</li>
+          <li>繊細なディテールと表情を追求</li>
+        </ul>
+        <div class="editorial-result">
+          <span class="editorial-result-label">完成作品</span>
+          <span class="editorial-result-value">ハイエンドシュガーフラワー</span>
+        </div>
+        <a href="./high-end-flower/" class="editorial-link">詳しく見る</a>
+      </div>
+    </article>
+
+    <!-- 04 ハイエンドリース — dark, photo right -->
+    <article class="editorial-item editorial-item--rev editorial-item--dark anim-fade-up">
+      <div class="editorial-item__photo"
+           style="background-image: url('../images/highend-wreath.jpg');">
+      </div>
+      <div class="editorial-item__body">
+        <span class="editorial-num">04</span>
+        <span class="editorial-tag">作品制作</span>
+        <h3 class="editorial-title">ハイエンド<br>リース</h3>
+        <ul class="editorial-list">
+          <li>ハイエンドの花を複数組み合わせる</li>
+          <li>リースの構成・配置・バランス</li>
+          <li>飾れる作品として完成させる</li>
+        </ul>
+        <div class="editorial-result">
+          <span class="editorial-result-label">完成作品</span>
+          <span class="editorial-result-value">シュガーフラワーリース</span>
+        </div>
+        <a href="./high-end-wreath/" class="editorial-link">詳しく見る</a>
+      </div>
+    </article>
+
+    <!-- 05 シュガーケーキ — light, photo left -->
+    <article class="editorial-item anim-fade-up">
+      <div class="editorial-item__photo"
+           style="background-image: url('../images/sugar-cake.jpg');">
+      </div>
+      <div class="editorial-item__body">
+        <span class="editorial-num">05</span>
+        <span class="editorial-tag">ケーキ装飾</span>
+        <h3 class="editorial-title">シュガーケーキ<br>レッスン</h3>
+        <ul class="editorial-list">
+          <li>シュガーフラワーをケーキ土台と合わせる</li>
+          <li>装飾の配置・バランス感覚</li>
+          <li>ケーキ作品として仕上げる技術</li>
+        </ul>
+        <div class="editorial-result">
+          <span class="editorial-result-label">完成作品</span>
+          <span class="editorial-result-value">シュガーフラワーケーキ</span>
+        </div>
+        <a href="./sugar-cake/" class="editorial-link">詳しく見る</a>
+      </div>
+    </article>
+
+    <!-- 06 ウェディング — goal dark, photo right -->
+    <article class="editorial-item editorial-item--rev editorial-item--goal anim-fade-up">
+      <div class="editorial-item__photo"
+           style="background-image: url('../images/wedding-cake.jpg');">
+      </div>
+      <div class="editorial-item__body">
+        <span class="editorial-num">06</span>
+        <span class="editorial-tag">最終ゴール</span>
+        <h3 class="editorial-title">ウェディング<br>シュガーケーキ</h3>
+        <ul class="editorial-list">
+          <li>ウェディングケーキ装飾の技術</li>
+          <li>特別な日のためのデザインと構成</li>
+          <li>全技術の集大成として仕上げる</li>
+        </ul>
+        <div class="editorial-result">
+          <span class="editorial-result-label">完成作品</span>
+          <span class="editorial-result-value">ウェディングシュガーケーキ</span>
+        </div>
+        <a href="./wedding-sugar-cake/" class="editorial-link">詳しく見る</a>
+      </div>
+    </article>
+
+  </div><!-- /.editorial-courses -->
+
+  <!-- ───── CTA ROW ───── -->
+  <div class="bg-ivory" style="padding: 56px 0; text-align: center;">
+    <div class="overview-cta-row anim-fade-up">
+      <a href="./beginner-guide/" class="btn-secondary">どの講座が合うか迷う方はこちら</a>
+      <a href="./current/" class="btn-primary">現在募集中のレッスンを見る</a>
+    </div>
+  </div>
+
+  <!-- ───── COURSE FLOW ───── -->
+  <section class="bg-white" id="flow">
+    <div class="container--wide">
+      <span class="eyebrow eyebrow--italic anim-fade-up">Course Flow</span>
+      <h2 class="section-heading section-heading--center section-heading--accent anim-fade-up anim-d1">学びの流れ</h2>
+      <div class="section-rule anim-fade-up anim-d2"></div>
+      <p class="overview-lead anim-fade-up anim-d2">どこから始め、どこへ進むか</p>
+
+      <div class="flow-path">
+
+        <a href="./flower-lessons/" class="flow-step anim-fade-up anim-d1">
+          <div class="flow-step__num">1</div>
+          <div class="flow-step__info">
+            <p class="flow-step__badge">入口・単発</p>
+            <p class="flow-step__name">花ごとのレッスン</p>
+            <p class="flow-step__sub">好きな1輪から体験 — ライラック・スイートピー・パンジー・カサブランカ</p>
+          </div>
+          <span class="flow-step__arrow">→</span>
+        </a>
+        <div class="flow-connector"></div>
+
+        <a href="./sugar-flower-beginner/" class="flow-step anim-fade-up anim-d2">
+          <div class="flow-step__num">2</div>
+          <div class="flow-step__info">
+            <p class="flow-step__badge">基礎講座</p>
+            <p class="flow-step__name">シュガーフラワービギナー講座</p>
+            <p class="flow-step__sub">複数の花と葉を学び、ブーケへ</p>
+          </div>
+          <span class="flow-step__arrow">→</span>
+        </a>
+        <div class="flow-connector"></div>
+
+        <a href="./high-end-flower/" class="flow-step anim-fade-up anim-d3">
+          <div class="flow-step__num">3</div>
+          <div class="flow-step__info">
+            <p class="flow-step__badge">上級レッスン</p>
+            <p class="flow-step__name">ハイエンドフラワーレッスン</p>
+            <p class="flow-step__sub">イングリッシュROSE・ガーベラなど高難度の花を深く学ぶ</p>
+          </div>
+          <span class="flow-step__arrow">→</span>
+        </a>
+        <div class="flow-connector"></div>
+
+        <a href="./high-end-wreath/" class="flow-step anim-fade-up anim-d4">
+          <div class="flow-step__num">4</div>
+          <div class="flow-step__info">
+            <p class="flow-step__badge">作品制作</p>
+            <p class="flow-step__name">ハイエンドリース</p>
+            <p class="flow-step__sub">高難度の花を組み合わせ、リース作品として完成させる</p>
+          </div>
+          <span class="flow-step__arrow">→</span>
+        </a>
+        <div class="flow-connector"></div>
+
+        <a href="./sugar-cake/" class="flow-step anim-fade-up anim-d5">
+          <div class="flow-step__num">5</div>
+          <div class="flow-step__info">
+            <p class="flow-step__badge">ケーキ装飾</p>
+            <p class="flow-step__name">シュガーケーキレッスン</p>
+            <p class="flow-step__sub">学んだ花をケーキ土台と合わせ、作品へ</p>
+          </div>
+          <span class="flow-step__arrow">→</span>
+        </a>
+        <div class="flow-connector"></div>
+
+        <a href="./wedding-sugar-cake/" class="flow-step flow-step--goal anim-fade-up anim-d6">
+          <div class="flow-step__num flow-step__num--goal">6</div>
+          <div class="flow-step__info">
+            <p class="flow-step__badge">最終ゴール</p>
+            <p class="flow-step__name">ウェディングシュガーケーキレッスン</p>
+            <p class="flow-step__sub">特別な日のケーキ装飾へ — 全技術の集大成</p>
+          </div>
+          <span class="flow-step__arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── BOTTOM CTA ───── -->
+  <section class="cta-bottom">
+    <div class="container">
+      <span class="eyebrow eyebrow--italic anim-fade-up">Next Step</span>
+      <h2 class="cta-bottom__heading anim-fade-up anim-d1">まずは一輪から。<br>あなたのペースで始められます。</h2>
+      <div class="ornament anim-fade-up anim-d2">
+        <span class="ornament__line"></span>
+        <span class="ornament__dot"></span>
+        <span class="ornament__dot"></span>
+        <span class="ornament__dot"></span>
+        <span class="ornament__line"></span>
+      </div>
+      <p class="cta-bottom__desc anim-fade-up anim-d2">現在募集中のレッスンをご確認ください。<br>どの講座が合うかわからない場合は、LINEでお気軽にご相談いただけます。</p>
+      <div class="cta-bottom__btns anim-fade-up anim-d3">
+        <a href="./current/" class="btn-primary">現在募集中のレッスンを見る</a>
+        <a href="#" class="btn-secondary">LINEで講座案内を受け取る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── FOOTER ───── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">
+        シュガーフラワー講座
+        <small>Sugar Flower Lesson</small>
+      </p>
+      <div class="site-footer__cols">
+        <div>
+          <p class="site-footer__col-title">講座カテゴリー</p>
+          <ul class="site-footer__list">
+            <li><a href="./flower-lessons/">花ごとのレッスン</a></li>
+            <li><a href="./sugar-flower-beginner/">ビギナー講座</a></li>
+            <li><a href="./high-end-flower/">ハイエンドフラワー</a></li>
+            <li><a href="./high-end-wreath/">ハイエンドリース</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-title">ケーキ装飾へ</p>
+          <ul class="site-footer__list">
+            <li><a href="./sugar-cake/">シュガーケーキ</a></li>
+            <li><a href="./wedding-sugar-cake/">ウェディングシュガーケーキ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-title">案内</p>
+          <ul class="site-footer__list">
+            <li><a href="./beginner-guide/">はじめての方へ</a></li>
+            <li><a href="./faq/">よくあるご質問</a></li>
+            <li><a href="./current/">現在募集中のレッスン</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__copyright">© Sugar Flower Lesson. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  /* ── Intro sequence (top page only) ── */
+  (function () {
+    var overlay  = document.getElementById('intro-overlay');
+    var center   = overlay.querySelector('.intro-center');
+    var panelTop = overlay.querySelector('.intro-panel--top');
+    var panelBot = overlay.querySelector('.intro-panel--bottom');
+
+    function revealHero() {
+      document.querySelectorAll('.hero-reveal-eyebrow, .hero-reveal-line').forEach(function (el) { el.classList.add('revealed'); });
+      setTimeout(function () {
+        document.querySelectorAll('.hero-reveal-sub').forEach(function (el) { el.classList.add('revealed'); });
+      }, 300);
+    }
+
+    if (sessionStorage.getItem('intro-played')) {
+      overlay.style.display = 'none';
+      revealHero();
+      return;
+    }
+
+    sessionStorage.setItem('intro-played', '1');
+
+    document.querySelectorAll('.hero-reveal-line span').forEach(function (el) {
+      el.style.transitionDelay = el.parentElement.style.getPropertyValue('--d') || '0s';
+    });
+
+    setTimeout(function () { center.classList.add('fade-out'); }, 850);
+    setTimeout(function () { panelTop.classList.add('split'); panelBot.classList.add('split'); }, 1050);
+    setTimeout(function () { overlay.style.display = 'none'; revealHero(); }, 2100);
+  })();
+  </script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>
