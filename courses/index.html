@@ -117,7 +117,7 @@
   <div class="editorial-courses">
 
     <!-- 01 花ごとのレッスン — light, photo left -->
-    <article class="editorial-item anim-fade-up">
+    <article id="course-01" class="editorial-item anim-fade-up">
       <div class="editorial-item__photo"
            style="background-image: url('../images/flower-lesson.jpg'); background-position: center 30%;">
       </div>
@@ -139,7 +139,7 @@
     </article>
 
     <!-- 02 ビギナー講座 — dark, photo right -->
-    <article class="editorial-item editorial-item--rev editorial-item--dark anim-fade-up">
+    <article id="course-02" class="editorial-item editorial-item--rev editorial-item--dark anim-fade-up">
       <div class="editorial-item__photo"
            style="background-image: url('../images/beginner.png'); background-color: #0e0a12; background-size: contain; background-position: center;">
       </div>
@@ -161,7 +161,7 @@
     </article>
 
     <!-- 03 ハイエンドフラワー — light, photo left -->
-    <article class="editorial-item anim-fade-up">
+    <article id="course-03" class="editorial-item anim-fade-up">
       <div class="editorial-item__photo"
            style="background-image: url('../images/highend-flower.jpg');">
       </div>
@@ -183,7 +183,7 @@
     </article>
 
     <!-- 04 ハイエンドリース — dark, photo right -->
-    <article class="editorial-item editorial-item--rev editorial-item--dark anim-fade-up">
+    <article id="course-04" class="editorial-item editorial-item--rev editorial-item--dark anim-fade-up">
       <div class="editorial-item__photo"
            style="background-image: url('../images/highend-wreath.jpg');">
       </div>
@@ -205,7 +205,7 @@
     </article>
 
     <!-- 05 シュガーケーキ — light, photo left -->
-    <article class="editorial-item anim-fade-up">
+    <article id="course-05" class="editorial-item anim-fade-up">
       <div class="editorial-item__photo"
            style="background-image: url('../images/sugar-cake.jpg');">
       </div>
@@ -227,7 +227,7 @@
     </article>
 
     <!-- 06 ウェディング — goal dark, photo right -->
-    <article class="editorial-item editorial-item--rev editorial-item--goal anim-fade-up">
+    <article id="course-06" class="editorial-item editorial-item--rev editorial-item--goal anim-fade-up">
       <div class="editorial-item__photo"
            style="background-image: url('../images/wedding-cake.jpg');">
       </div>
@@ -394,6 +394,16 @@
     </div>
   </footer>
 
+  <!-- ───── COURSE SIDE TABS ───── -->
+  <nav class="course-tabs" aria-label="講座ナビ">
+    <a class="course-tab" href="#course-01" data-tab="01">01</a>
+    <a class="course-tab" href="#course-02" data-tab="02">02</a>
+    <a class="course-tab" href="#course-03" data-tab="03">03</a>
+    <a class="course-tab" href="#course-04" data-tab="04">04</a>
+    <a class="course-tab" href="#course-05" data-tab="05">05</a>
+    <a class="course-tab" href="#course-06" data-tab="06">06</a>
+  </nav>
+
   <script>
   /* ── Intro sequence (top page only) ── */
   (function () {
@@ -427,6 +437,27 @@
   })();
   </script>
   <script src="../js/main.js"></script>
+  <script>
+  /* ── Course side-tabs: IntersectionObserver ── */
+  (function () {
+    var tabs = document.querySelectorAll('.course-tab');
+    if (!tabs.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var num = entry.target.id.replace('course-', '');
+          tabs.forEach(function (t) { t.classList.remove('is-active'); });
+          var active = document.querySelector('.course-tab[data-tab="' + num + '"]');
+          if (active) active.classList.add('is-active');
+        }
+      });
+    }, { threshold: 0.35 });
+    for (var i = 1; i <= 6; i++) {
+      var el = document.getElementById('course-0' + i);
+      if (el) observer.observe(el);
+    }
+  })();
+  </script>
 
 </body>
 </html>
