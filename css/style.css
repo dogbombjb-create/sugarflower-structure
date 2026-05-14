@@ -1686,39 +1686,45 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
 .editorial-courses { display: flex; flex-direction: column; }
 
 .editorial-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 56vh;
-  position: relative;
-}
-.editorial-item--rev { direction: rtl; }
-.editorial-item--rev > * { direction: ltr; }
-
-.editorial-item__photo {
-  background-size: cover;
-  background-position: center;
+  display: block;
+  min-height: 82vh;
   position: relative;
   overflow: hidden;
-  min-height: 280px;
+}
+.editorial-item--rev { direction: ltr; }
+
+.editorial-item__photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
 }
 .editorial-item__photo::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.06);
+  background: linear-gradient(
+    180deg,
+    rgba(8,4,16,0.08) 0%,
+    rgba(8,4,16,0.28) 42%,
+    rgba(8,4,16,0.82) 78%,
+    rgba(8,4,16,0.93) 100%
+  );
 }
 
 .editorial-item__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 72px 64px;
+  background: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 56px 52px;
-  background: var(--white);
-  position: relative;
+  justify-content: flex-end;
+  max-width: 900px;
 }
-.editorial-item--dark .editorial-item__body {
-  background: #221428;
-}
+.editorial-item--dark .editorial-item__body { background: none; }
 
 .editorial-num {
   font-size: 96px;
@@ -1726,12 +1732,12 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   font-weight: 300;
   font-style: italic;
   letter-spacing: -0.04em;
-  color: var(--border);
+  color: rgba(255,255,255,0.10);
   display: block;
   margin-bottom: 20px;
   user-select: none;
 }
-.editorial-item--dark .editorial-num { color: rgba(255,255,255,0.07); }
+.editorial-item--dark .editorial-num { color: rgba(255,255,255,0.10); }
 
 .editorial-tag {
   display: inline-block;
@@ -1740,21 +1746,21 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   text-transform: uppercase;
   padding: 5px 16px;
   border-radius: 50px;
-  border: 1px solid var(--border);
-  color: var(--text-light);
+  border: 1px solid rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.58);
   margin-bottom: 20px;
   align-self: flex-start;
 }
 .editorial-item--dark .editorial-tag {
-  border-color: rgba(255,255,255,0.18);
-  color: rgba(255,255,255,0.45);
+  border-color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.58);
 }
 
 .editorial-title {
-  font-size: 22px;
+  font-size: 40px;
   font-weight: 600;
-  line-height: 1.45;
-  color: var(--text-dark);
+  line-height: 1.28;
+  color: #fff;
   margin-bottom: 20px;
   letter-spacing: 0.02em;
 }
@@ -1765,18 +1771,18 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   display: flex;
   flex-direction: column;
   gap: 9px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.75;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.68);
   margin-bottom: 28px;
 }
-.editorial-item--dark .editorial-list { color: rgba(255,255,255,0.55); }
+.editorial-item--dark .editorial-list { color: rgba(255,255,255,0.68); }
 .editorial-list li { display: flex; gap: 10px; align-items: baseline; }
 .editorial-list li::before {
   content: '';
   width: 18px;
   height: 1px;
-  background: var(--border-gold);
+  background: rgba(255,255,255,0.38);
   flex-shrink: 0;
   margin-top: 11px;
 }
@@ -1786,26 +1792,26 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   align-items: center;
   gap: 14px;
   padding-top: 22px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.14);
   margin-top: auto;
   margin-bottom: 24px;
 }
-.editorial-item--dark .editorial-result { border-color: rgba(255,255,255,0.10); }
+.editorial-item--dark .editorial-result { border-color: rgba(255,255,255,0.14); }
 
 .editorial-result-label {
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.42);
 }
-.editorial-item--dark .editorial-result-label { color: rgba(255,255,255,0.35); }
+.editorial-item--dark .editorial-result-label { color: rgba(255,255,255,0.42); }
 
 .editorial-result-value {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--text-dark);
+  color: rgba(255,255,255,0.92);
 }
-.editorial-item--dark .editorial-result-value { color: rgba(255,255,255,0.85); }
+.editorial-item--dark .editorial-result-value { color: rgba(255,255,255,0.92); }
 
 .editorial-link {
   display: inline-flex;
@@ -1814,11 +1820,11 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--lilac);
+  color: rgba(255,255,255,0.78);
   text-decoration: none;
   transition: gap 0.2s;
 }
-.editorial-item--dark .editorial-link { color: var(--lilac-light); }
+.editorial-item--dark .editorial-link { color: rgba(255,255,255,0.78); }
 .editorial-link::after { content: '→'; }
 .editorial-link::before {
   content: '';
@@ -1829,26 +1835,26 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
 .editorial-item { cursor: pointer; }
 
 /* Goal item (last) */
-.editorial-item--goal .editorial-item__body { background: #1A0E2A; }
+.editorial-item--goal .editorial-item__body { background: none; }
 .editorial-item--goal .editorial-num { color: rgba(212,184,128,0.12); }
 .editorial-item--goal .editorial-tag {
-  border-color: var(--gold-light);
-  color: var(--gold-light);
+  border-color: rgba(212,184,128,0.48);
+  color: rgba(212,184,128,0.88);
 }
 .editorial-item--goal .editorial-title { color: #fff; }
 
-/* Mobile stacking */
-@media (max-width: 899px) {
-  .editorial-item,
-  .editorial-item--rev { grid-template-columns: 1fr; direction: ltr; }
-  .editorial-item__photo { height: 56vw; min-height: 220px; }
-  .editorial-item__body { padding: 36px 24px 40px; }
-  .editorial-num { font-size: 60px; }
-  .editorial-title { font-size: 20px; }
+/* Mobile */
+@media (max-width: 767px) {
+  .editorial-item { min-height: 75vh; }
+  .editorial-item__body { padding: 28px 24px 44px; max-width: none; }
+  .editorial-num { font-size: 52px; margin-bottom: 12px; }
+  .editorial-title { font-size: 26px; }
+  .editorial-list { font-size: 15px; }
 }
-@media (min-width: 900px) and (max-width: 1023px) {
-  .editorial-item__body { padding: 44px 36px; }
+@media (min-width: 768px) and (max-width: 1100px) {
+  .editorial-item__body { padding: 40px 52px 56px; }
   .editorial-num { font-size: 72px; }
+  .editorial-title { font-size: 32px; }
 }
 
 /* ── 2. Marquee strip ── */
