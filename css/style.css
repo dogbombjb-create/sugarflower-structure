@@ -1678,26 +1678,139 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   margin-bottom: 0;
 }
 
-/* ── 0. Intro overlay (split reveal) ── */
+/* ── 0. Intro overlay (scan + flower reveal) ── */
 #intro-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
+  background: #0C0818;
+  overflow: hidden;
 }
-.intro-panel {
-  position: absolute;
-  left: 0; right: 0;
-  height: 50%;
-  background: #160C22;
-  transition: transform 1.0s cubic-bezier(0.76, 0, 0.24, 1);
-  will-change: transform;
+/* 退場：画面ごと上へスライドアウト */
+#intro-overlay.exiting {
+  transform: translateY(-100%);
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
 }
-.intro-panel--top { top: 0; }
-.intro-panel--bottom { bottom: 0; }
-.intro-panel--top.split    { transform: translateY(-100%); }
-.intro-panel--bottom.split { transform: translateY(100%); }
 
+/* ── 背景の花（SVG） ── */
+.intro-flower {
+  position: absolute;
+  width: min(580px, 90vw);
+  height: min(580px, 90vw);
+  right: -16%;
+  bottom: -16%;
+  opacity: 0;
+  animation: ifl-appear 2.0s ease forwards 0s;
+}
+@keyframes ifl-appear {
+  0%   { opacity: 0; transform: rotate(-18deg) scale(0.86); }
+  35%  { opacity: 0.7; }
+  100% { opacity: 1;  transform: rotate(0deg) scale(1); }
+}
+/* 外側の花びら：stroke-dasharray で1枚ずつ描画 */
+.ifl-outer path {
+  stroke: rgba(212,184,128,0.52);
+  stroke-width: 1.5;
+  fill: rgba(212,184,128,0.04);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: petal-draw 1.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.ifl-outer path:nth-child(1) { animation-delay: 0.04s; }
+.ifl-outer path:nth-child(2) { animation-delay: 0.18s; }
+.ifl-outer path:nth-child(3) { animation-delay: 0.32s; }
+.ifl-outer path:nth-child(4) { animation-delay: 0.46s; }
+.ifl-outer path:nth-child(5) { animation-delay: 0.60s; }
+@keyframes petal-draw {
+  to { stroke-dashoffset: 0; }
+}
+/* 中間の花びら：フェードイン */
+.ifl-mid path {
+  stroke: rgba(212,184,128,0.32);
+  stroke-width: 1;
+  fill: rgba(212,184,128,0.025);
+  opacity: 0;
+  animation: ifl-fade 0.8s ease forwards 0.85s;
+}
+/* 内側の花びら */
+.ifl-inner path {
+  stroke: rgba(212,184,128,0.20);
+  stroke-width: 0.8;
+  fill: rgba(212,184,128,0.015);
+  opacity: 0;
+  animation: ifl-fade 0.7s ease forwards 1.05s;
+}
+/* 中心円・蕊 */
+.ifl-center {
+  stroke: rgba(212,184,128,0.35);
+  stroke-width: 1;
+  opacity: 0;
+  animation: ifl-fade 0.6s ease forwards 1.15s;
+}
+.ifl-stamen circle {
+  fill: rgba(212,184,128,0.55);
+  opacity: 0;
+  animation: ifl-fade 0.5s ease forwards 1.25s;
+}
+@keyframes ifl-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── 走査線 ── */
+.intro-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(212,184,128,0.15) 18%,
+    rgba(255,255,255,0.94) 50%,
+    rgba(212,184,128,0.15) 82%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 18px 6px rgba(212,184,128,0.52),
+    0 0 42px 12px rgba(212,184,128,0.18);
+  opacity: 0;
+  animation: scan-sweep 1.0s cubic-bezier(0.4, 0, 0.55, 1) 0.15s forwards;
+}
+@keyframes scan-sweep {
+  0%   { left: 0%;   opacity: 1; }
+  97%  {             opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* ── 浮遊する花びら ── */
+.intro-petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ip {
+  position: absolute;
+  border-radius: 50% 5% 50% 5%;
+  background: rgba(212,184,128,0.30);
+  opacity: 0;
+  animation: ip-drift var(--dur,2.5s) ease-in var(--delay,1.4s) forwards;
+}
+@keyframes ip-drift {
+  0%   { opacity: 0;    transform: translate(0,0) rotate(var(--r0,0deg)); }
+  14%  { opacity: 0.72; }
+  100% { opacity: 0;    transform: translate(var(--tx,-20px),-175px) rotate(var(--r1,120deg)); }
+}
+.ip-1 { width:10px; height:16px; bottom:44%; left:43%; --dur:2.3s; --delay:1.25s; --r0: 15deg; --r1: 155deg; --tx:-28px; }
+.ip-2 { width: 8px; height:13px; bottom:48%; left:51%; --dur:2.6s; --delay:1.45s; --r0:-25deg; --r1:-145deg; --tx: 22px; }
+.ip-3 { width:12px; height:19px; bottom:40%; left:47%; --dur:2.1s; --delay:1.55s; --r0: 40deg; --r1: 200deg; --tx:-14px; }
+.ip-4 { width: 9px; height:14px; bottom:46%; left:55%; --dur:2.4s; --delay:1.75s; --r0:-10deg; --r1: -85deg; --tx: 32px; }
+.ip-5 { width:11px; height:17px; bottom:42%; left:39%; --dur:2.7s; --delay:1.35s; --r0: 55deg; --r1: 185deg; --tx:-36px; }
+.ip-6 { width: 7px; height:11px; bottom:50%; left:59%; --dur:2.2s; --delay:1.65s; --r0:-45deg; --r1:-165deg; --tx: 18px; }
+
+/* ── センターテキスト ── */
 .intro-center {
   position: absolute;
   inset: 0;
@@ -1705,43 +1818,50 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  z-index: 1;
-  transition: opacity 0.5s ease;
+  gap: 13px;
   pointer-events: none;
 }
-.intro-center.fade-out { opacity: 0; }
+.intro-center.fade-out {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
 
+/* スキャン通過と同期したワイプ演出 */
 .intro-sub {
   font-size: 11px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.40);
+  color: rgba(255,255,255,0.38);
   font-family: 'Noto Serif JP', serif;
-  opacity: 0;
-  animation: intro-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+  font-weight: 300;
+  clip-path: inset(0 100% 0 0);
+  animation: scan-wipe 0.60s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.48s;
 }
 .intro-name {
-  font-size: 22px;
-  letter-spacing: 0.12em;
+  font-size: clamp(30px, 7vw, 52px);
+  letter-spacing: 0.14em;
   color: #fff;
   font-family: 'Noto Serif JP', serif;
   font-weight: 300;
-  opacity: 0;
-  animation: intro-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+  clip-path: inset(0 100% 0 0);
+  animation: scan-wipe 0.78s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.60s;
+  line-height: 1.2;
+  text-align: center;
+}
+@keyframes scan-wipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0   0% 0 0); }
 }
 .intro-line {
-  width: 40px;
+  width: 0;
   height: 1px;
-  background: rgba(212,190,232,0.35);
-  margin-top: 6px;
-  opacity: 0;
-  animation: intro-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.50s forwards;
+  background: linear-gradient(90deg, transparent 0%, rgba(212,184,128,0.80) 50%, transparent 100%);
+  margin-top: 2px;
+  animation: line-open 0.50s ease forwards 1.02s;
 }
-
-@keyframes intro-rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes line-open {
+  from { width: 0; }
+  to   { width: 60px; }
 }
 
 /* ── Hero title clip reveal ── */
