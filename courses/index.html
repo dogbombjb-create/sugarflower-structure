@@ -22,47 +22,32 @@
 
   <!-- ───── INTRO OVERLAY ───── -->
   <div id="intro-overlay" aria-hidden="true">
-    <svg class="intro-flower" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="ifl-outer">
-        <path d="M250,250 C200,230 180,158 250,82 C320,158 300,230 250,250"/>
-        <path d="M250,250 C200,230 180,158 250,82 C320,158 300,230 250,250" transform="rotate(72,250,250)"/>
-        <path d="M250,250 C200,230 180,158 250,82 C320,158 300,230 250,250" transform="rotate(144,250,250)"/>
-        <path d="M250,250 C200,230 180,158 250,82 C320,158 300,230 250,250" transform="rotate(216,250,250)"/>
-        <path d="M250,250 C200,230 180,158 250,82 C320,158 300,230 250,250" transform="rotate(288,250,250)"/>
-      </g>
-      <g class="ifl-mid">
-        <path d="M250,250 C218,237 205,188 250,130 C295,188 282,237 250,250" transform="rotate(36,250,250)"/>
-        <path d="M250,250 C218,237 205,188 250,130 C295,188 282,237 250,250" transform="rotate(108,250,250)"/>
-        <path d="M250,250 C218,237 205,188 250,130 C295,188 282,237 250,250" transform="rotate(180,250,250)"/>
-        <path d="M250,250 C218,237 205,188 250,130 C295,188 282,237 250,250" transform="rotate(252,250,250)"/>
-        <path d="M250,250 C218,237 205,188 250,130 C295,188 282,237 250,250" transform="rotate(324,250,250)"/>
-      </g>
-      <g class="ifl-inner">
-        <path d="M250,250 C236,244 232,216 250,192 C268,216 264,244 250,250"/>
-        <path d="M250,250 C236,244 232,216 250,192 C268,216 264,244 250,250" transform="rotate(72,250,250)"/>
-        <path d="M250,250 C236,244 232,216 250,192 C268,216 264,244 250,250" transform="rotate(144,250,250)"/>
-        <path d="M250,250 C236,244 232,216 250,192 C268,216 264,244 250,250" transform="rotate(216,250,250)"/>
-        <path d="M250,250 C236,244 232,216 250,192 C268,216 264,244 250,250" transform="rotate(288,250,250)"/>
-      </g>
-      <circle cx="250" cy="250" r="26" class="ifl-center"/>
-      <circle cx="250" cy="250" r="13" class="ifl-center"/>
-      <g class="ifl-stamen">
-        <circle cx="250" cy="230" r="2.5"/>
-        <circle cx="250" cy="230" r="2.5" transform="rotate(72,250,250)"/>
-        <circle cx="250" cy="230" r="2.5" transform="rotate(144,250,250)"/>
-        <circle cx="250" cy="230" r="2.5" transform="rotate(216,250,250)"/>
-        <circle cx="250" cy="230" r="2.5" transform="rotate(288,250,250)"/>
+    <div class="intro-bloom-glow"></div>
+    <div class="intro-ring"></div>
+    <svg class="intro-bloom" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- 外側5枚：すべて同じパス（上向き）、CSS transformで展開 -->
+      <path class="ibl-petal ibl-p1" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
+      <path class="ibl-petal ibl-p2" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
+      <path class="ibl-petal ibl-p3" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
+      <path class="ibl-petal ibl-p4" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
+      <path class="ibl-petal ibl-p5" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
+      <!-- 内側5枚：36°オフセットで開く -->
+      <path class="ibl-ipetal ibl-i1" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
+      <path class="ibl-ipetal ibl-i2" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
+      <path class="ibl-ipetal ibl-i3" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
+      <path class="ibl-ipetal ibl-i4" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
+      <path class="ibl-ipetal ibl-i5" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
+      <!-- 中心 -->
+      <circle cx="250" cy="250" r="24" class="ibl-center"/>
+      <circle cx="250" cy="250" r="12" class="ibl-center"/>
+      <g class="ibl-stamen">
+        <circle cx="250" cy="232" r="2.5"/>
+        <circle cx="250" cy="232" r="2.5" transform="rotate(72,250,250)"/>
+        <circle cx="250" cy="232" r="2.5" transform="rotate(144,250,250)"/>
+        <circle cx="250" cy="232" r="2.5" transform="rotate(216,250,250)"/>
+        <circle cx="250" cy="232" r="2.5" transform="rotate(288,250,250)"/>
       </g>
     </svg>
-    <div class="intro-scan"></div>
-    <div class="intro-petals" aria-hidden="true">
-      <span class="ip ip-1"></span>
-      <span class="ip ip-2"></span>
-      <span class="ip ip-3"></span>
-      <span class="ip ip-4"></span>
-      <span class="ip ip-5"></span>
-      <span class="ip ip-6"></span>
-    </div>
     <div class="intro-center">
       <span class="intro-sub">Sugar Flower Lesson</span>
       <span class="intro-name">シュガーフラワー講座</span>
@@ -469,9 +454,9 @@
       el.style.transitionDelay = el.parentElement.style.getPropertyValue('--d') || '0s';
     });
 
-    setTimeout(function () { center.classList.add('fade-out'); }, 1600);
-    setTimeout(function () { overlay.classList.add('exiting'); }, 1800);
-    setTimeout(function () { overlay.style.display = 'none'; revealHero(); }, 2700);
+    setTimeout(function () { center.classList.add('fade-out'); }, 2200);
+    setTimeout(function () { overlay.classList.add('exiting'); }, 2500);
+    setTimeout(function () { overlay.style.display = 'none'; revealHero(); }, 3400);
   })();
   </script>
   <script src="../js/main.js"></script>
