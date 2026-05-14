@@ -1744,23 +1744,29 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
 .editorial-item__body {
   position: absolute;
   bottom: 0;
-  left: 0;
-  padding: 28px 5% 44px;
+  left: 6%;
+  padding: 28px 36px 44px;
   background: none;
   display: flex;
   flex-direction: column;
-  max-width: 960px;
-  width: 100%;
+  /* 画面幅の約44% — 中央寄りで写真も右側に見える */
+  width: 44%;
+  max-width: 800px;
+  min-width: 380px;
 }
-/* 偶数セクション（rev）はテキストを右側に */
+/* 偶数セクション（rev）：右寄せ */
 .editorial-item--rev .editorial-item__body {
   left: auto;
-  right: 0;
+  right: 6%;
   text-align: right;
 }
 .editorial-item--rev .editorial-tag { align-self: flex-end; }
 .editorial-item--rev .editorial-list li { flex-direction: row-reverse; }
 .editorial-item--rev .editorial-result { flex-direction: row-reverse; }
+/* PCではタイトル内の改行を無効化（横幅を活かして1行で表示） */
+@media (min-width: 768px) {
+  .editorial-title br { display: none; }
+}
 .editorial-item--dark .editorial-item__body { background: none; }
 
 .editorial-num {
@@ -1884,11 +1890,13 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
 @media (max-width: 767px) {
   .editorial-item { min-height: 60vh; }
   .editorial-item__body {
-    padding: 20px 18px 28px;
-    max-width: none;
+    left: 0;
     width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding: 20px 18px 28px;
   }
-  /* rev items: モバイルは左寄せに戻す */
+  /* rev: モバイルは左寄せ統一 */
   .editorial-item--rev .editorial-item__body {
     left: 0;
     right: auto;
@@ -1904,16 +1912,34 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   .editorial-result-value { font-size: 14px; }
   .editorial-link { font-size: 10px; }
 }
+
+/* Tablet (768–1100px): 幅を広げてより読みやすく */
 @media (min-width: 768px) and (max-width: 1100px) {
   .editorial-item { min-height: 68vh; }
-  .editorial-item__body { padding: 24px 5% 40px; max-width: 800px; }
+  .editorial-item__body {
+    left: 4%;
+    width: 60%;
+    max-width: none;
+    min-width: 0;
+    padding: 24px 32px 40px;
+  }
+  .editorial-item--rev .editorial-item__body { right: 4%; left: auto; }
   .editorial-num { font-size: 52px; margin-bottom: 8px; }
   .editorial-title { font-size: 28px; margin-bottom: 10px; }
   .editorial-list { font-size: 13px; }
 }
-/* 大画面: テキスト幅をさらに広げる */
+
+/* 大画面 (1440px+): 余裕があるのでさらにパディング増やす */
 @media (min-width: 1440px) {
-  .editorial-item__body { max-width: 1100px; padding: 32px 6% 52px; }
+  .editorial-item__body {
+    left: 7%;
+    width: 42%;
+    max-width: 820px;
+    padding: 32px 40px 52px;
+  }
+  .editorial-item--rev .editorial-item__body { right: 7%; left: auto; }
+  .editorial-num { font-size: 72px; }
+  .editorial-title { font-size: 38px; }
 }
 
 /* ── 2. Marquee strip ── */
