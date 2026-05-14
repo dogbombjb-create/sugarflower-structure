@@ -2832,3 +2832,233 @@ body.cursor-hover #cursor-ring {
   border-right: 1.5px solid var(--gold);
   transform: rotate(-45deg) translate(1px, 2px);
 }
+
+
+/* ================================================================
+   SF-KV  —  SHIPS-style Opening Key Visual  (courses/index.html)
+   ================================================================ */
+
+/* ── Layout ── */
+.sf-kv {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: #f9f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Grid texture ── */
+.sf-kv__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(140,110,70,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140,110,70,.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+/* ── Brackets ── */
+.sf-kv__bracket {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: clamp(300px, 58vh, 520px);
+  pointer-events: none;
+  z-index: 2;
+}
+.sf-kv__bracket--left  { left: clamp(18px, 7vw, 100px); }
+.sf-kv__bracket--right { right: clamp(18px, 7vw, 100px); }
+
+.sf-kv__bracket-path {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: sf-bracket-draw .35s cubic-bezier(.4,0,.2,1) .05s forwards;
+}
+@keyframes sf-bracket-draw { to { stroke-dashoffset: 0; } }
+
+/* ── Title area ── */
+.sf-kv__title {
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  user-select: none;
+}
+
+/* ── Mini brand logo at top of KV ── */
+.sf-kv__kv-logo {
+  position: absolute;
+  top: clamp(20px, 3.5vh, 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: #2c2118;
+  opacity: 0;
+  transition: opacity .8s ease .1s;
+  white-space: nowrap;
+}
+.sf-kv__kv-logo.is-show { opacity: 1; }
+
+.sf-kv__eyebrow {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 22px;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+.sf-kv__eyebrow.is-show { opacity: 1; }
+
+.sf-kv__main {
+  font-family: 'Playfair Display', 'Noto Serif JP', serif;
+  font-size: clamp(60px, 11vw, 148px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: .06em;
+  color: #2c2118;
+  margin: 0;
+  display: block;
+}
+.sf-kv__line { display: block; }
+
+.sf-char {
+  display: inline-block;
+  opacity: 0;
+}
+.sf-char--sp {
+  width: .3em;
+}
+
+.sf-kv__sub {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(12px, 1.4vw, 17px);
+  font-weight: 300;
+  letter-spacing: .25em;
+  color: #7a6455;
+  margin-top: 24px;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.sf-kv__sub.is-show { opacity: 1; }
+
+.sf-kv__meta {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #b8a08a;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity .7s ease .3s;
+}
+.sf-kv__meta.is-show { opacity: 1; }
+
+/* ── Photos ── */
+.sf-kv__photo {
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.sf-kv__photo-inner {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 8s ease;
+}
+.sf-kv__photo:hover .sf-kv__photo-inner { transform: scale(1.04); }
+
+/* Photo 1 — upper-left, circle */
+.sf-kv__photo--1 {
+  width: clamp(90px, 10vw, 150px);
+  height: clamp(90px, 10vw, 150px);
+  border-radius: 50%;
+  top: 9%;
+  left: 16%;
+}
+/* Photo 2 — upper-right, rounded rect, slight tilt */
+.sf-kv__photo--2 {
+  width: clamp(80px, 9vw, 128px);
+  height: clamp(110px, 13vw, 180px);
+  border-radius: 14px;
+  top: 10%;
+  right: 18%;
+}
+/* Photo 3 — right-center, large circle */
+.sf-kv__photo--3 {
+  width: clamp(150px, 18vw, 250px);
+  height: clamp(150px, 18vw, 250px);
+  border-radius: 50%;
+  top: 32%;
+  right: 5%;
+}
+/* Photo 4 — lower-left, circle */
+.sf-kv__photo--4 {
+  width: clamp(110px, 12vw, 170px);
+  height: clamp(110px, 12vw, 170px);
+  border-radius: 50%;
+  bottom: 10%;
+  left: 9%;
+}
+/* Photo 5 — lower-right, rounded rect */
+.sf-kv__photo--5 {
+  width: clamp(80px, 9vw, 130px);
+  height: clamp(110px, 13vw, 175px);
+  border-radius: 14px;
+  bottom: 8%;
+  right: 20%;
+}
+
+/* ── Scroll hint ── */
+.sf-kv__scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  opacity: 0;
+  animation: sf-scroll-in .6s ease 3.4s forwards;
+}
+.sf-kv__scroll-line {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+  animation: sf-scroll-drip 1.6s ease-in-out 3.8s infinite;
+}
+.sf-kv__scroll-label {
+  font-size: 8px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+@keyframes sf-scroll-in  { to { opacity: 1; } }
+@keyframes sf-scroll-drip {
+  0%, 100% { transform: scaleY(1) translateY(0);   opacity: .8; }
+  55%       { transform: scaleY(.6) translateY(4px); opacity: .4; }
+}
+
+/* ── Mobile tweaks ── */
+@media (max-width: 600px) {
+  .sf-kv__bracket { width: 30px; }
+  .sf-kv__bracket--left  { left: 10px; }
+  .sf-kv__bracket--right { right: 10px; }
+  .sf-kv__photo--3 { display: none; } /* hide large circle on small screens */
+  .sf-kv__photo--5 { display: none; }
+}

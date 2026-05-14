@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -20,40 +20,61 @@
   <div id="cursor-dot"></div>
   <div id="cursor-ring"></div>
 
-  <!-- ───── INTRO OVERLAY ───── -->
-  <div id="intro-overlay" aria-hidden="true">
-    <div class="intro-bloom-glow"></div>
-    <div class="intro-ring"></div>
-    <svg class="intro-bloom" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- 外側5枚：すべて同じパス（上向き）、CSS transformで展開 -->
-      <path class="ibl-petal ibl-p1" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
-      <path class="ibl-petal ibl-p2" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
-      <path class="ibl-petal ibl-p3" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
-      <path class="ibl-petal ibl-p4" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
-      <path class="ibl-petal ibl-p5" d="M250,250 C186,224 162,140 250,68 C338,140 314,224 250,250"/>
-      <!-- 内側5枚：36°オフセットで開く -->
-      <path class="ibl-ipetal ibl-i1" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
-      <path class="ibl-ipetal ibl-i2" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
-      <path class="ibl-ipetal ibl-i3" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
-      <path class="ibl-ipetal ibl-i4" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
-      <path class="ibl-ipetal ibl-i5" d="M250,250 C221,238 212,196 250,156 C288,196 279,238 250,250"/>
-      <!-- 中心 -->
-      <circle cx="250" cy="250" r="24" class="ibl-center"/>
-      <circle cx="250" cy="250" r="12" class="ibl-center"/>
-      <g class="ibl-stamen">
-        <circle cx="250" cy="232" r="2.5"/>
-        <circle cx="250" cy="232" r="2.5" transform="rotate(72,250,250)"/>
-        <circle cx="250" cy="232" r="2.5" transform="rotate(144,250,250)"/>
-        <circle cx="250" cy="232" r="2.5" transform="rotate(216,250,250)"/>
-        <circle cx="250" cy="232" r="2.5" transform="rotate(288,250,250)"/>
-      </g>
+  <!-- ───── KV (Opening) ───── -->
+  <section id="sf-kv" class="sf-kv" aria-label="シュガーフラワー講座">
+    <div class="sf-kv__grid" aria-hidden="true"></div>
+
+    <!-- Mini logo at top center -->
+    <p class="sf-kv__kv-logo" id="sf-kv-logo">Sugar Flower Lesson</p>
+
+    <!-- Left bracket -->
+    <svg class="sf-kv__bracket sf-kv__bracket--left" viewBox="0 0 60 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+      <path class="sf-kv__bracket-path" d="M 50,8 C 10,110 10,310 50,412" fill="none" stroke="#2c2118" stroke-width="1.6" stroke-linecap="round"/>
     </svg>
-    <div class="intro-center">
-      <span class="intro-sub">Sugar Flower Lesson</span>
-      <span class="intro-name">シュガーフラワー講座</span>
-      <span class="intro-line"></span>
+
+    <!-- Right bracket -->
+    <svg class="sf-kv__bracket sf-kv__bracket--right" viewBox="0 0 60 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+      <path class="sf-kv__bracket-path" d="M 10,8 C 50,110 50,310 10,412" fill="none" stroke="#2c2118" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+
+    <!-- Title -->
+    <div class="sf-kv__title">
+      <p class="sf-kv__eyebrow" id="sf-eyebrow">Sugar Flower Lesson</p>
+      <h1 class="sf-kv__main" aria-label="シュガーフラワー講座一覧">
+        <span class="sf-kv__line">
+          <span class="sf-char">S</span><span class="sf-char">U</span><span class="sf-char">G</span><span class="sf-char">A</span><span class="sf-char">R</span>
+        </span>
+        <span class="sf-kv__line">
+          <span class="sf-char">F</span><span class="sf-char">L</span><span class="sf-char">O</span><span class="sf-char">W</span><span class="sf-char">E</span><span class="sf-char">R</span>
+        </span>
+      </h1>
+      <p class="sf-kv__sub" id="sf-sub">シュガーフラワー講座</p>
+      <p class="sf-kv__meta" id="sf-meta">一輪から、ブーケ、リース、ケーキへ</p>
     </div>
-  </div>
+
+    <!-- Photos -->
+    <div class="sf-kv__photo sf-kv__photo--1" aria-hidden="true">
+      <div class="sf-kv__photo-inner" style="background-image:url('../images/flower-lesson.jpg')"></div>
+    </div>
+    <div class="sf-kv__photo sf-kv__photo--2" aria-hidden="true">
+      <div class="sf-kv__photo-inner" style="background-image:url('../images/wedding-cake.jpg')"></div>
+    </div>
+    <div class="sf-kv__photo sf-kv__photo--3" aria-hidden="true">
+      <div class="sf-kv__photo-inner" style="background-image:url('../images/highend-wreath.jpg')"></div>
+    </div>
+    <div class="sf-kv__photo sf-kv__photo--4" aria-hidden="true">
+      <div class="sf-kv__photo-inner" style="background-image:url('../images/sugar-cake.jpg')"></div>
+    </div>
+    <div class="sf-kv__photo sf-kv__photo--5" aria-hidden="true">
+      <div class="sf-kv__photo-inner" style="background-image:url('../images/beginner.png')"></div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="sf-kv__scroll" aria-hidden="true">
+      <span class="sf-kv__scroll-line"></span>
+      <span class="sf-kv__scroll-label">Scroll</span>
+    </div>
+  </section>
 
   <!-- ───── GLOBAL HEADER ───── -->
   <header class="site-header">
@@ -82,21 +103,6 @@
       </nav>
     </div>
   </header>
-
-  <!-- ───── HERO ───── -->
-  <section class="hero hero--compact hero--photo">
-    <div class="hero__photo-bg"></div>
-    <div class="container">
-      <div class="hero__inner">
-        <span class="hero__eyebrow eyebrow--italic hero-reveal-eyebrow">Sugar Flower Lesson</span>
-        <h1 class="hero__title" style="margin-bottom:10px;">
-          <span class="hero-reveal-line" style="--d:0s"><span>シュガーフラワー</span></span>
-          <span class="hero-reveal-line" style="--d:0.12s"><span>講座一覧</span></span>
-        </h1>
-        <p class="hero__subtitle hero-reveal-sub">全講座の内容と学びの流れ</p>
-      </div>
-    </div>
-  </section>
 
   <!-- ───── MARQUEE ───── -->
   <div class="marquee-strip" aria-hidden="true">
@@ -430,33 +436,76 @@
   </nav>
 
   <script>
-  /* ── Intro sequence (top page only) ── */
+  /* ── KV Opening Animation ── */
   (function () {
-    var overlay = document.getElementById('intro-overlay');
-    var center  = overlay.querySelector('.intro-center');
+    var kv = document.getElementById('sf-kv');
+    if (!kv) return;
 
-    function revealHero() {
-      document.querySelectorAll('.hero-reveal-eyebrow, .hero-reveal-line').forEach(function (el) { el.classList.add('revealed'); });
-      setTimeout(function () {
-        document.querySelectorAll('.hero-reveal-sub').forEach(function (el) { el.classList.add('revealed'); });
-      }, 300);
-    }
+    var chars   = kv.querySelectorAll('.sf-char');
+    var kvLogo  = document.getElementById('sf-kv-logo');
+    var eyebrow = document.getElementById('sf-eyebrow');
+    var sub     = document.getElementById('sf-sub');
+    var meta    = document.getElementById('sf-meta');
 
-    if (sessionStorage.getItem('intro-played')) {
-      overlay.style.display = 'none';
-      revealHero();
+    /* Photo initial positions: [translateX, translateY, rotateDeg] */
+    var photoInit = [
+      ['-35vw', '-45vh',  -14],
+      [' 50vw', '-40vh',   11],
+      [' 55vw', '  8vh',    9],
+      ['-40vw', ' 45vh',  -11],
+      [' 40vw', ' 50vh',   14]
+    ];
+
+    var photos = kv.querySelectorAll('.sf-kv__photo');
+
+    /* ── Skip on return visits ── */
+    if (sessionStorage.getItem('sf-kv-played')) {
+      chars.forEach(function (c) { c.style.opacity = '1'; });
+      if (kvLogo)  kvLogo.classList.add('is-show');
+      if (eyebrow) eyebrow.classList.add('is-show');
+      if (sub)     sub.classList.add('is-show');
+      if (meta)    meta.classList.add('is-show');
+      photos.forEach(function (p) {
+        p.style.opacity = '1';
+        p.style.transform = 'translate(0,0) rotate(0deg)';
+      });
       return;
     }
+    sessionStorage.setItem('sf-kv-played', '1');
 
-    sessionStorage.setItem('intro-played', '1');
-
-    document.querySelectorAll('.hero-reveal-line span').forEach(function (el) {
-      el.style.transitionDelay = el.parentElement.style.getPropertyValue('--d') || '0s';
+    /* ── Set photo initial positions (no transition yet) ── */
+    photos.forEach(function (p, i) {
+      var cfg = photoInit[i] || ['0vw', '60vh', 0];
+      p.style.cssText += ';transform:translate(' + cfg[0] + ',' + cfg[1] + ') rotate(' + cfg[2] + 'deg);opacity:0;will-change:transform,opacity';
     });
 
-    setTimeout(function () { center.classList.add('fade-out'); }, 2200);
-    setTimeout(function () { overlay.classList.add('exiting'); }, 2500);
-    setTimeout(function () { overlay.style.display = 'none'; revealHero(); }, 3400);
+    /* ── Phase 1: mini logo + eyebrow fade in with bracket ── */
+    setTimeout(function () {
+      if (kvLogo)  kvLogo.classList.add('is-show');
+      if (eyebrow) eyebrow.classList.add('is-show');
+    }, 200);
+
+    /* ── Phase 2: Typewriter (SUGAR then FLOWER) ── */
+    chars.forEach(function (c, i) {
+      setTimeout(function () { c.style.opacity = '1'; }, 320 + i * 95);
+    });
+
+    /* ── Phase 3: Subtitle ── */
+    setTimeout(function () {
+      if (sub)  sub.classList.add('is-show');
+    }, 1300);
+    setTimeout(function () {
+      if (meta) meta.classList.add('is-show');
+    }, 1600);
+
+    /* ── Phase 4: Photos fly in ── */
+    photos.forEach(function (p, i) {
+      setTimeout(function () {
+        p.style.transition = 'transform 1.25s cubic-bezier(.16,1,.3,1), opacity .65s ease';
+        p.style.transform  = 'translate(0,0) rotate(0deg)';
+        p.style.opacity    = '1';
+      }, 1400 + i * 160);
+    });
   })();
   </script>
   <script src="../js/main.js"></script>
