@@ -181,5 +181,26 @@
   </footer>
 
   <script src="../../js/main.js"></script>
+
+  <!-- ───── PAGE TOP BUTTON ───── -->
+  <button class="sf-page-top" id="sf-page-top"
+          onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          aria-label="ページトップへ">↑</button>
+
+  <script>
+  /* ── is-scroll: body class when past 50vh ── */
+  (function () {
+    var body = document.body;
+    function onScroll() {
+      if (window.scrollY > window.innerHeight * 0.5) {
+        body.classList.add('is-scroll');
+      } else {
+        body.classList.remove('is-scroll');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
 </body>
 </html>

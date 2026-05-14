@@ -167,22 +167,25 @@
     });
   });
 
-  /* ── Scroll-to-top button ── */
-  var scrollTopBtn = document.createElement('button');
-  scrollTopBtn.id = 'scroll-top';
-  scrollTopBtn.setAttribute('aria-label', 'ページトップへ戻る');
-  document.body.appendChild(scrollTopBtn);
+  /* ── Scroll-to-top button ──
+     Skip if sf-page-top already exists (courses pages use their own) */
+  if (!document.getElementById('sf-page-top')) {
+    var scrollTopBtn = document.createElement('button');
+    scrollTopBtn.id = 'scroll-top';
+    scrollTopBtn.setAttribute('aria-label', 'ページトップへ戻る');
+    document.body.appendChild(scrollTopBtn);
 
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 400) {
-      scrollTopBtn.classList.add('is-visible');
-    } else {
-      scrollTopBtn.classList.remove('is-visible');
-    }
-  }, { passive: true });
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('is-visible');
+      } else {
+        scrollTopBtn.classList.remove('is-visible');
+      }
+    }, { passive: true });
 
-  scrollTopBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    scrollTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 })();
