@@ -24,6 +24,10 @@
   --border-gold:   #D4B880;
   --shadow-sm:     0 2px 16px rgba(160, 128, 180, 0.10);
   --shadow-md:     0 4px 28px rgba(160, 128, 180, 0.14);
+  --shadow-depth:  0 1px 3px rgba(0,0,0,0.04), 0 6px 24px rgba(0,0,0,0.07), 0 18px 52px rgba(0,0,0,0.05);
+  --shadow-lift:   0 2px 6px rgba(0,0,0,0.05), 0 12px 40px rgba(0,0,0,0.10), 0 32px 80px rgba(0,0,0,0.07);
+  --deep-bg:       #0D0A12;
+  --gold-bright:   #C8A464;
   --radius-card:   20px;
   --radius-sm:     12px;
   --radius-pill:   50px;
@@ -346,22 +350,28 @@ section { padding: 72px 0; }
 
 /* ── Typography helpers ── */
 .eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  color: var(--text-light);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--gold);
   text-transform: uppercase;
   text-align: center;
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  font-weight: 300;
 }
 .section-heading {
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.55;
+  letter-spacing: 0.06em;
   color: var(--text-dark);
   margin-bottom: 20px;
 }
 .section-heading--center { text-align: center; }
+.section-heading--accent {
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
 .section-body {
   font-size: 18px;
   line-height: 2.0;
@@ -489,24 +499,22 @@ section { padding: 72px 0; }
 
 /* ── Note box ── */
 .note-box {
-  background: linear-gradient(135deg, #F5EEF9 0%, #EDE4F4 100%);
-  border: 1px solid var(--lilac-light);
-  border-radius: 16px;
-  padding: 18px 22px;
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212,184,128,0.22);
+  border-left: 2px solid var(--gold-light);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 22px 18px 28px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-mid);
-  line-height: 1.8;
+  line-height: 1.85;
   position: relative;
-  padding-left: 36px;
+  box-shadow: var(--shadow-depth);
 }
 .note-box::before {
-  content: '✿';
-  position: absolute;
-  left: 14px;
-  top: 17px;
-  font-size: 12px;
-  color: var(--lilac-light);
+  content: none;
 }
 
 /* ── Next step ── */
@@ -878,16 +886,17 @@ a.map-step__card:hover {
 .choice-box {
   display: block;
   background: var(--white);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(212,184,128,0.18);
   border-radius: var(--radius-card);
-  padding: 28px 24px;
+  padding: 32px 28px;
   text-decoration: none;
-  transition: border-color .25s, transform .2s, box-shadow .25s;
+  box-shadow: var(--shadow-depth);
+  transition: border-color .32s, transform .32s cubic-bezier(0.22,1,0.36,1), box-shadow .32s;
 }
 .choice-box:hover {
-  border-color: var(--lilac-light);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(212,184,128,0.42);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
 }
 .choice-box__label {
   font-size: 12px;
@@ -929,18 +938,18 @@ a.map-step__card:hover {
 .flower-card {
   display: block;
   background: var(--white);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(212,184,128,0.18);
   border-radius: var(--radius-card);
   overflow: hidden;
   text-decoration: none;
   color: var(--text-dark);
-  box-shadow: var(--shadow-sm);
-  transition: transform .25s, box-shadow .25s, border-color .25s;
+  box-shadow: var(--shadow-depth);
+  transition: transform .36s cubic-bezier(0.22,1,0.36,1), box-shadow .36s, border-color .36s;
 }
 .flower-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--lilac-light);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgba(212,184,128,0.40);
 }
 .flower-card__photo {
   height: 180px;
@@ -1149,22 +1158,66 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
    BOTTOM CTA SECTION
 ──────────────────────────────────────────────────────────────── */
 .cta-bottom {
-  background: linear-gradient(160deg, #F0E8F5 0%, #F8F3EC 55%, #ECF3E8 100%);
-  padding: 80px 0;
+  background: var(--deep-bg);
+  padding: 96px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 320px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,184,128,0.65), transparent);
+}
+.cta-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(212,184,128,0.07) 0%, transparent 70%);
+  pointer-events: none;
 }
 .cta-bottom__heading {
   font-size: 24px;
-  font-weight: 500;
-  color: var(--text-dark);
-  line-height: 1.5;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
   margin-bottom: 18px;
 }
 .cta-bottom__desc {
-  font-size: 17px;
-  color: var(--text-mid);
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
   line-height: 2.0;
+  letter-spacing: 0.04em;
   margin-bottom: 36px;
+}
+.cta-bottom .eyebrow {
+  color: rgba(212,184,128,0.75);
+}
+.cta-bottom .btn-primary {
+  background: transparent;
+  border: 1.5px solid rgba(212,184,128,0.65);
+  color: rgba(255,255,255,0.90);
+  box-shadow: 0 4px 24px rgba(212,184,128,0.12);
+}
+.cta-bottom .btn-primary:hover {
+  background: rgba(212,184,128,0.12);
+  border-color: rgba(212,184,128,0.90);
+  color: #fff;
+  box-shadow: 0 8px 36px rgba(212,184,128,0.22);
+  transform: translateY(-3px);
+}
+.cta-bottom .btn-secondary {
+  background: transparent;
+  border-color: rgba(255,255,255,0.20);
+  color: rgba(255,255,255,0.55);
+}
+.cta-bottom .btn-secondary:hover {
+  border-color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.85);
+  transform: translateY(-2px);
 }
 .cta-bottom__btns {
   display: flex;
@@ -1213,11 +1266,16 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
 ──────────────────────────────────────────────────────────────── */
 .recruit-card {
   background: var(--white);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(212,184,128,0.18);
   border-radius: var(--radius-card);
-  padding: 24px 24px;
+  padding: 28px 28px;
   margin-bottom: 16px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-depth);
+  transition: transform .32s cubic-bezier(0.22,1,0.36,1), box-shadow .32s;
+}
+.recruit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
 }
 .recruit-card__status {
   display: inline-block;
@@ -2620,6 +2678,70 @@ body.cursor-hover #cursor-ring {
 /* ── ≤480px: ナビ文字サイズ調整
    「シュガーフラワービギナー講座」14文字 × 26px = 364px は
    10vw(=39px) パディング内の 312px に収まらないため縮小 ── */
+/* ── Vogue系 奥行き・高級感ユーティリティ ── */
+
+/* セクション見出し上の金線 */
+.section-heading--center::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  margin: 18px auto 0;
+  opacity: 0.7;
+}
+
+/* bg-ivory に微妙な質感 */
+.bg-ivory {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(212,184,128,0.04) 0%, transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(164,132,188,0.04) 0%, transparent 55%);
+}
+
+/* カードグリッドに対称マージン */
+.course-grid, .flower-grid {
+  position: relative;
+}
+
+/* cs__desc を雑誌プルクォート風に */
+.cs__desc {
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(212,184,128,0.30);
+  border-bottom: 1px solid rgba(212,184,128,0.30);
+  border-left: none;
+  border-radius: 0;
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text-dark);
+  letter-spacing: 0.04em;
+  margin-bottom: 36px;
+}
+
+/* バナー区切り：ゴールドの細線 */
+.rule-gold {
+  border: none;
+  border-top: 1px solid rgba(212,184,128,0.30);
+  margin: 48px auto;
+  width: 200px;
+}
+
+/* ダーク背景内のハイライト */
+.bg-deep {
+  background: var(--deep-bg);
+  color: #fff;
+  position: relative;
+}
+.bg-deep::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 280px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,184,128,0.55), transparent);
+}
+
 @media (max-width: 480px) {
   .site-nav__list { padding: 0 7vw; }
   .site-nav__list a {
