@@ -2872,15 +2872,20 @@ body.cursor-hover #cursor-ring {
   pointer-events: none;
   z-index: 2;
 }
-.sf-kv__bracket--left  { left: clamp(18px, 7vw, 100px); }
-.sf-kv__bracket--right { right: clamp(18px, 7vw, 100px); }
-
-.sf-kv__bracket-path {
-  stroke-dasharray: 520;
-  stroke-dashoffset: 520;
-  animation: sf-bracket-draw .35s cubic-bezier(.4,0,.2,1) .05s forwards;
+.sf-kv__bracket--left {
+  left: clamp(18px, 7vw, 100px);
+  clip-path: inset(0 0 100% 0);
+  animation: sf-bracket-left 0.6s cubic-bezier(0.7, 0, 0.3, 1) 0.1s forwards;
 }
-@keyframes sf-bracket-draw { to { stroke-dashoffset: 0; } }
+.sf-kv__bracket--right {
+  right: clamp(18px, 7vw, 100px);
+  clip-path: inset(100% 0 0 0);
+  animation: sf-bracket-right 0.6s cubic-bezier(0.7, 0, 0.3, 1) 0.1s forwards;
+}
+@keyframes sf-bracket-left  { to { clip-path: inset(0 0 0% 0); } }
+@keyframes sf-bracket-right { to { clip-path: inset(0% 0 0 0); } }
+
+.sf-kv__bracket-path { /* static — no stroke-dashoffset animation */ }
 
 /* ── Title area ── */
 .sf-kv__title {
@@ -2931,11 +2936,16 @@ body.cursor-hover #cursor-ring {
   margin: 0;
   display: block;
 }
-.sf-kv__line { display: block; }
+.sf-kv__line {
+  display: block;
+  overflow: hidden;       /* mask chars that haven't slid up yet */
+  padding-bottom: .05em; /* prevent descender clip */
+}
 
 .sf-char {
   display: inline-block;
-  opacity: 0;
+  transform: translateY(110%);
+  transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .sf-char--sp {
   width: .3em;
