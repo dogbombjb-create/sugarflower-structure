@@ -2472,3 +2472,62 @@ body.cursor-hover #cursor-ring {
 @media (max-width: 767px) {
   .course-tabs { display: none; }
 }
+
+/* ================================================================
+   RESPONSIVE: 390px BASELINE
+   ================================================================ */
+
+/* スマホのみ表示の改行タグ（desktop: 非表示） */
+.sp-br { display: none; }
+@media (max-width: 767px) { .sp-br { display: block; } }
+
+/* ── Mobile (〜767px) ── */
+@media (max-width: 767px) {
+
+  /* ベースフォント */
+  body { font-size: 16px; }
+
+  /* セクション余白を縮小 */
+  section { padding: 52px 0; }
+  .cta-bottom { padding: 60px 0; }
+
+  /* ヒーロー */
+  .hero__title { font-size: 28px; }   /* subphoto: 32px → 28px。hero--photo は上位セレクタで36px維持 */
+  .hero__subtitle { font-size: 16px; }
+  .hero__desc { font-size: 16px; line-height: 1.85; }
+
+  /* セクション見出し（26px → 22px で長い文字数に対応） */
+  .section-heading { font-size: 22px; }
+
+  /* CTA 下部見出し（24px → 21px で15文字以上の折れ対策） */
+  .cta-bottom__heading { font-size: 21px; line-height: 1.6; }
+  .cta-bottom__desc { font-size: 16px; }
+
+  /* 本文・説明文 */
+  .section-body { font-size: 16px; }
+  .philosophy p { font-size: 16px; }
+  .cs__desc { font-size: 15px; padding: 16px 18px; }
+
+  /* FAQ */
+  .faq-q__text { font-size: 16px; }
+  .faq-a { font-size: 15px; }
+
+  /* 学びの流れ（flow-step）: 390px でのタイトル・サブ最適化 */
+  .flow-step { padding: 12px 14px; gap: 12px; }
+  .flow-step__name { font-size: 15px; }
+  .flow-step__sub { font-size: 12px; line-height: 1.55; }
+}
+
+/* ── ≤480px: ナビ文字サイズ調整
+   「シュガーフラワービギナー講座」14文字 × 26px = 364px は
+   10vw(=39px) パディング内の 312px に収まらないため縮小 ── */
+@media (max-width: 480px) {
+  .site-nav__list { padding: 0 7vw; }
+  .site-nav__list a {
+    font-size: 21px;
+    padding: 14px 0;
+  }
+  .site-nav__list a:hover,
+  .site-nav__list a.is-current { padding-left: 24px; }
+  .site-nav__list::before { margin-bottom: 30px; }
+}
