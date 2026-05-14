@@ -929,11 +929,11 @@ a.map-step__card:hover {
 ──────────────────────────────────────────────────────────────── */
 .flower-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 @media (min-width: 640px) {
-  .flower-grid { grid-template-columns: repeat(2, 1fr); }
+  .flower-grid { gap: 20px; }
 }
 .flower-card {
   display: block;
@@ -2701,6 +2701,38 @@ body.cursor-hover #cursor-ring {
 /* カードグリッドに対称マージン */
 .course-grid, .flower-grid {
   position: relative;
+}
+
+/* ── 2列グリッド時のflower-cardモバイル最適化 ── */
+@media (max-width: 639px) {
+  .flower-card__photo {
+    height: 130px;
+    font-size: 30px;
+  }
+  .flower-card__body {
+    padding: 12px 13px 14px;
+  }
+  .flower-card__title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .flower-card__diff {
+    margin-bottom: 8px;
+  }
+  .flower-card__desc {
+    font-size: 12px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .flower-card__more {
+    font-size: 11px;
+  }
+  .diff-pill {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
 }
 
 /* cs__desc を雑誌プルクォート風に */
