@@ -167,4 +167,22 @@
     });
   });
 
+  /* ── Scroll-to-top button ── */
+  var scrollTopBtn = document.createElement('button');
+  scrollTopBtn.id = 'scroll-top';
+  scrollTopBtn.setAttribute('aria-label', 'ページトップへ戻る');
+  document.body.appendChild(scrollTopBtn);
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('is-visible');
+    } else {
+      scrollTopBtn.classList.remove('is-visible');
+    }
+  }, { passive: true });
+
+  scrollTopBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
 })();

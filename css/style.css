@@ -2784,3 +2784,51 @@ body.cursor-hover #cursor-ring {
   .site-nav__list a.is-current { padding-left: 24px; }
   .site-nav__list::before { margin-bottom: 30px; }
 }
+
+/* ────────────────────────────────────────────────────────────────
+   SCROLL-TO-TOP BUTTON
+──────────────────────────────────────────────────────────────── */
+#scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 184, 128, 0.48);
+  background: rgba(249, 246, 241, 0.90);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.32s ease, visibility 0.32s ease,
+              transform 0.32s ease, background 0.22s ease,
+              border-color 0.22s ease, box-shadow 0.22s ease;
+  z-index: 90;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+#scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#scroll-top:hover {
+  background: rgba(255, 255, 255, 0.97);
+  border-color: rgba(212, 184, 128, 0.78);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+#scroll-top::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 1.5px solid var(--gold);
+  border-right: 1.5px solid var(--gold);
+  transform: rotate(-45deg) translate(1px, 2px);
+}
