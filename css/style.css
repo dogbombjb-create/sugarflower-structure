@@ -116,14 +116,16 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: none;
   height: 100vh;
   background: rgba(10,4,18,0.97);
-  padding: 100px 52px 52px;
+  padding: 0;
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity .35s ease;
   z-index: 99;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .nav-toggle:checked ~ .site-nav {
   opacity: 1;
@@ -137,29 +139,93 @@ img { max-width: 100%; height: auto; display: block; }
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ── 閉じるボタン (nav内) ── */
+.nav-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 40px;
+  transition: color .2s, border-color .2s;
+  font-family: 'Noto Serif JP', serif;
+}
+.nav-close-btn:hover {
+  color: rgba(255,255,255,0.9);
+  border-color: rgba(255,255,255,0.38);
+}
+.nav-close-btn span {
+  font-size: 13px;
+  line-height: 1;
+  font-style: normal;
+}
+
 .site-nav__list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0;
   width: 100%;
+  padding: 0 10vw;
+}
+/* ブランド名（ナビ左上）*/
+.site-nav__list::before {
+  content: 'Sugar Flower Lesson';
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  color: rgba(255,255,255,0.22);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-weight: 300;
 }
 .site-nav__list a {
   display: block;
-  padding: 20px 0;
-  font-size: 30px;
+  padding: 16px 0;
+  font-size: 26px;
   font-weight: 300;
-  color: rgba(255,255,255,0.50);
+  color: rgba(255,255,255,0.42);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   border-radius: 0;
-  transition: color .2s;
-  letter-spacing: 0.04em;
+  transition: color .25s, padding-left .25s;
+  letter-spacing: 0.06em;
+  position: relative;
 }
-.site-nav__list a:hover,
+.site-nav__list a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0);
+  width: 20px;
+  height: 1px;
+  background: rgba(255,255,255,0.55);
+  transition: transform .25s ease;
+  transform-origin: left;
+}
+.site-nav__list a:hover {
+  color: rgba(255,255,255,0.95);
+  padding-left: 32px;
+}
+.site-nav__list a:hover::before {
+  transform: translateY(-50%) scaleX(1);
+}
 .site-nav__list a.is-current {
   background: none;
   color: rgba(255,255,255,0.95);
+  padding-left: 32px;
+}
+.site-nav__list a.is-current::before {
+  transform: translateY(-50%) scaleX(1);
 }
 
 /* nav overlay — replaced by full-screen site-nav */
@@ -179,36 +245,66 @@ body.nav-is-open .site-header__logo { color: rgba(255,255,255,0.85); }
 
 @media (min-width: 960px) {
   .nav-toggle-label { display: none; }
+  .nav-close-btn { display: none; }
   .site-nav {
     position: static;
     width: auto;
     max-width: none;
     height: auto;
     padding: 0;
-    box-shadow: none;
     background: transparent;
     overflow: visible;
     opacity: 1;
     pointer-events: auto;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
   }
   .site-nav__list {
     flex-direction: row;
-    gap: 2px;
+    gap: 0;
     flex-wrap: wrap;
+    padding: 0;
   }
+  .site-nav__list::before { display: none; }
   .site-nav__list a {
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: var(--radius-pill);
-    color: var(--text-dark);
+    padding: 8px 16px;
+    font-size: 13px;
+    letter-spacing: 0.10em;
+    border-radius: 0;
+    color: var(--text-mid);
     border-bottom: none;
+    transition: color .2s;
+    position: relative;
   }
-  .site-nav__list a:hover,
-  .site-nav__list a.is-current {
-    background: var(--lilac-pale);
+  /* モバイル用アクセントラインを非表示 */
+  .site-nav__list a::before { display: none; }
+  /* アンダーライン：中央から左右へ展開 */
+  .site-nav__list a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    right: 50%;
+    height: 1px;
+    background: var(--lilac);
+    transition: left .25s ease, right .25s ease;
+    pointer-events: none;
+  }
+  .site-nav__list a:hover {
     color: var(--lilac-dark);
+    padding-left: 16px;
+    background: none;
+  }
+  .site-nav__list a:hover::after,
+  .site-nav__list a.is-current::after {
+    left: 16px;
+    right: 16px;
+  }
+  .site-nav__list a.is-current {
+    background: none;
+    color: var(--lilac-dark);
+    padding-left: 16px;
   }
 }
 
@@ -1720,6 +1816,26 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   overflow: hidden;
 }
 .editorial-item--rev { direction: ltr; }
+
+/* セクション間の区切り線（金×白グラデーション） */
+.editorial-item + .editorial-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.18) 18%,
+    rgba(212,184,128,0.35) 50%,
+    rgba(255,255,255,0.18) 82%,
+    transparent 100%
+  );
+  z-index: 10;
+  pointer-events: none;
+}
 
 .editorial-item__photo {
   position: absolute;
