@@ -51,16 +51,31 @@
     }
   }
 
-  /* ── Parallax on editorial photo sections ── */
+  /* ── Nav open: toggle body class for CSS (transparent header, white X) ── */
+  var navToggleEl = document.getElementById('nav-toggle');
+  if (navToggleEl) {
+    navToggleEl.addEventListener('change', function () {
+      document.body.classList.toggle('nav-is-open', this.checked);
+    });
+    // close nav when clicking outside (pressing Escape)
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navToggleEl.checked) {
+        navToggleEl.checked = false;
+        document.body.classList.remove('nav-is-open');
+      }
+    });
+  }
+
+  /* ── Parallax on editorial photo sections (desktop only) ── */
   var parallaxEls = document.querySelectorAll('.editorial-item__photo');
-  if (parallaxEls.length > 0) {
+  if (parallaxEls.length > 0 && window.innerWidth > 768) {
     function updateParallax() {
       var vh = window.innerHeight;
       parallaxEls.forEach(function (el) {
         var rect = el.getBoundingClientRect();
         if (rect.bottom < -100 || rect.top > vh + 100) return;
         var progress = 1 - (rect.top + rect.height / 2) / (vh / 2 + rect.height / 2);
-        var offset = progress * 28;
+        var offset = progress * 20;
         el.style.backgroundPositionY = 'calc(center + ' + offset + 'px)';
       });
     }
