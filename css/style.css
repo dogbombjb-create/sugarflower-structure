@@ -32,7 +32,7 @@
 /* ── Reset ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', serif;
@@ -1411,9 +1411,8 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   .overview-cta-row {
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
   }
-  .overview-cta-row .btn-primary,
-  .overview-cta-row .btn-secondary { white-space: nowrap; }
 }
 
 /* ────────────────────────────────────────────────────────────────
@@ -1517,8 +1516,8 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
     flex-direction: row;
     justify-content: center;
     max-width: none;
+    flex-wrap: wrap;
   }
-  .btn-primary, .btn-secondary { white-space: nowrap; }
 }
 
 /* Course map — 2-column grid on desktop */
@@ -1818,16 +1817,13 @@ details[open] .faq-q__toggle::after { transform: translate(-50%, -50%) rotate(90
   color: var(--lilac);
   text-decoration: none;
   transition: gap 0.2s;
-  position: relative;
-  z-index: 1;
 }
 .editorial-item--dark .editorial-link { color: var(--lilac-light); }
 .editorial-link::after { content: '→'; }
 .editorial-link::before {
   content: '';
   position: absolute;
-  inset: -9999px;
-  z-index: 0;
+  inset: 0;
 }
 .editorial-link:hover { gap: 16px; }
 .editorial-item { cursor: pointer; }
