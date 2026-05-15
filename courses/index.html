@@ -494,8 +494,17 @@
     var sub     = document.getElementById('sf-sub');
     var meta    = document.getElementById('sf-meta');
 
+    var isMobile = window.innerWidth < 640;
+
     /* Photo initial positions: [translateX, translateY, rotateDeg] */
-    var photoInit = [
+    /* SP: 近めの位置から飛び込む / PC: 遠めの位置から steps() ジャンプ */
+    var photoInit = isMobile ? [
+      ['-18vw', '-20vh',  -6],   /* photo 1 (左上) */
+      ['  0vw', '  0vh',   0],   /* photo 2 — SP非表示だが配列を揃える */
+      [' 20vw', ' 14vh',   5],   /* photo 3 (右中) */
+      ['-18vw', ' 22vh',  -5],   /* photo 4 (左下) */
+      ['  0vw', '  0vh',   0]    /* photo 5 — SP非表示 */
+    ] : [
       ['-35vw', '-45vh',  -14],
       [' 50vw', '-40vh',   11],
       [' 55vw', '  8vh',    9],
@@ -553,10 +562,14 @@
       if (meta) meta.classList.add('is-show');
     }, 1600);
 
-    /* ── Phase 4: Photos fly in — steps(3) SHIPS-style jump ── */
+    /* ── Phase 4: Photos fly in ── */
+    /* SP: smooth ease-out で滑らかに / PC: steps(3) SHIPS-style ジャンプ */
+    var photoTransition = isMobile
+      ? 'transform 0.85s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.55s ease'
+      : 'transform 1.2s steps(3), opacity .4s steps(1)';
     photos.forEach(function (p, i) {
       setTimeout(function () {
-        p.style.transition = 'transform 1.2s steps(3), opacity .4s steps(1)';
+        p.style.transition = photoTransition;
         p.style.transform  = 'translate(0,0) rotate(0deg)';
         p.style.opacity    = '1';
       }, 1400 + i * 120);
