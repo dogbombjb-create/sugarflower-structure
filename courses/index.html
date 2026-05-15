@@ -138,14 +138,27 @@
     </div>
   </div>
 
-  <!-- ───── COURSES INTRO ───── -->
-  <div class="editorial-intro" id="courses">
-    <span class="eyebrow eyebrow--italic anim-fade-up">All Courses</span>
-    <h2 class="section-heading section-heading--center section-heading--accent anim-fade-up anim-d1">全講座一覧</h2>
-  </div>
+  <!-- ───── COURSES STICKY 3-COL LAYOUT ───── -->
+  <div class="courses-sticky-wrap">
 
-  <!-- ───── EDITORIAL COURSE LIST ───── -->
-  <div class="editorial-courses">
+    <!-- Left deco column -->
+    <div class="courses-sticky-wrap__deco" aria-hidden="true">
+      <span class="courses-wrap-deco__label">Sugar Flower Lesson</span>
+      <span class="courses-wrap-deco__line"></span>
+      <span class="courses-wrap-deco__year">2025</span>
+    </div>
+
+    <!-- Center: main scrollable content -->
+    <div class="courses-sticky-wrap__main">
+
+    <!-- COURSES INTRO -->
+    <div class="editorial-intro" id="courses">
+      <span class="eyebrow eyebrow--italic anim-fade-up">All Courses</span>
+      <h2 class="section-heading section-heading--center section-heading--accent anim-fade-up anim-d1">全講座一覧</h2>
+    </div>
+
+    <!-- EDITORIAL COURSE LIST -->
+    <div class="editorial-courses">
 
     <!-- 01 花ごとのレッスン — light, photo left -->
     <article id="course-01" class="editorial-item anim-fade-up">
@@ -279,15 +292,54 @@
       </div>
     </article>
 
-  </div><!-- /.editorial-courses -->
+    </div><!-- /.editorial-courses -->
 
-  <!-- ───── CTA ROW ───── -->
-  <div class="bg-ivory" style="padding: 56px 0; text-align: center;">
-    <div class="overview-cta-row anim-fade-up">
-      <a href="./beginner-guide/" class="btn-secondary">どの講座が合うか迷う方はこちら</a>
-      <a href="./current/" class="btn-primary">現在募集中のレッスンを見る</a>
+    <!-- CTA ROW -->
+    <div class="bg-ivory" style="padding: 56px 0; text-align: center;">
+      <div class="overview-cta-row anim-fade-up">
+        <a href="./beginner-guide/" class="btn-secondary">どの講座が合うか迷う方はこちら</a>
+        <a href="./current/" class="btn-primary">現在募集中のレッスンを見る</a>
+      </div>
     </div>
-  </div>
+
+    </div><!-- /.courses-sticky-wrap__main -->
+
+    <!-- Right: sticky sidenav -->
+    <nav class="courses-sticky-wrap__side" aria-label="講座ナビ">
+      <span class="courses-side-eyebrow">All Courses</span>
+      <a class="sf-sidenav__item" href="#course-01" data-course="01">
+        <b class="sf-sidenav__num">01</b>
+        <span class="sf-sidenav__div"></span>
+        <span class="sf-sidenav__name">花ごとのレッスン</span>
+      </a>
+      <a class="sf-sidenav__item" href="#course-02" data-course="02">
+        <b class="sf-sidenav__num">02</b>
+        <span class="sf-sidenav__div"></span>
+        <span class="sf-sidenav__name">ビギナー講座</span>
+      </a>
+      <a class="sf-sidenav__item" href="#course-03" data-course="03">
+        <b class="sf-sidenav__num">03</b>
+        <span class="sf-sidenav__div"></span>
+        <span class="sf-sidenav__name">ハイエンド</span>
+      </a>
+      <a class="sf-sidenav__item" href="#course-04" data-course="04">
+        <b class="sf-sidenav__num">04</b>
+        <span class="sf-sidenav__div"></span>
+        <span class="sf-sidenav__name">リース</span>
+      </a>
+      <a class="sf-sidenav__item" href="#course-05" data-course="05">
+        <b class="sf-sidenav__num">05</b>
+        <span class="sf-sidenav__div"></span>
+        <span class="sf-sidenav__name">シュガーケーキ</span>
+      </a>
+      <a class="sf-sidenav__item" href="#course-06" data-course="06">
+        <b class="sf-sidenav__num">06</b>
+        <span class="sf-sidenav__div"></span>
+        <span class="sf-sidenav__name">ウェディング</span>
+      </a>
+    </nav>
+
+  </div><!-- /.courses-sticky-wrap -->
 
   <!-- ───── COURSE FLOW ───── -->
   <section class="bg-white" id="flow">
@@ -424,47 +476,6 @@
       <p class="site-footer__copyright">© Sugar Flower Lesson. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- ───── RIGHT FIXED SIDEBAR NAV ───── -->
-  <nav class="sf-sidenav" id="sf-sidenav" aria-label="講座ナビ">
-    <a class="sf-sidenav__item" href="#course-01" data-course="01">
-      <b class="sf-sidenav__num">01</b>
-      <span class="sf-sidenav__div"></span>
-      <span class="sf-sidenav__name">花ごとのレッスン</span>
-    </a>
-    <a class="sf-sidenav__item" href="#course-02" data-course="02">
-      <b class="sf-sidenav__num">02</b>
-      <span class="sf-sidenav__div"></span>
-      <span class="sf-sidenav__name">ビギナー講座</span>
-    </a>
-    <a class="sf-sidenav__item" href="#course-03" data-course="03">
-      <b class="sf-sidenav__num">03</b>
-      <span class="sf-sidenav__div"></span>
-      <span class="sf-sidenav__name">ハイエンド</span>
-    </a>
-    <a class="sf-sidenav__item" href="#course-04" data-course="04">
-      <b class="sf-sidenav__num">04</b>
-      <span class="sf-sidenav__div"></span>
-      <span class="sf-sidenav__name">リース</span>
-    </a>
-    <a class="sf-sidenav__item" href="#course-05" data-course="05">
-      <b class="sf-sidenav__num">05</b>
-      <span class="sf-sidenav__div"></span>
-      <span class="sf-sidenav__name">シュガーケーキ</span>
-    </a>
-    <a class="sf-sidenav__item" href="#course-06" data-course="06">
-      <b class="sf-sidenav__num">06</b>
-      <span class="sf-sidenav__div"></span>
-      <span class="sf-sidenav__name">ウェディング</span>
-    </a>
-  </nav>
-
-  <!-- ───── LEFT DECORATIVE BAR ───── -->
-  <div class="sf-deco-bar" aria-hidden="true">
-    <span class="sf-deco-bar__label">Sugar Flower Lesson</span>
-    <span class="sf-deco-bar__line"></span>
-    <span class="sf-deco-bar__year">2025</span>
-  </div>
 
   <!-- ───── PAGE TOP BUTTON ───── -->
   <button class="sf-page-top" id="sf-page-top"

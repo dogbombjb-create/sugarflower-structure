@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>現在募集中のレッスン｜シュガーフラワー講座</title>
-  <meta name="description" content="現在お申し込みいただけるシュガーフラワーレッスンと、近日募集予定の講座をご案内しています。">
+  <meta name="description" content="現在参加募集中のシュガーフラワーレッスン一覧。各講座の日程・定員・料金をご確認いただけます。">
   <meta property="og:title" content="現在募集中のレッスン｜シュガーフラワー講座">
   <meta property="og:description" content="シュガーフラワー講座の最新募集情報。LINEで次回募集のご案内をお届けします。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="../../images/hero-bg.jpg">
+  <meta property="og:image" content="../../images/flower-lesson.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
       <label for="nav-toggle" class="nav-toggle-label"><span></span><span></span><span></span></label>
       <label for="nav-toggle" class="nav-overlay"></label>
       <nav class="site-nav">
-      <label for="nav-toggle" class="nav-close-btn"><span>&#10005;</span> CLOSE</label>
+        <label for="nav-toggle" class="nav-close-btn"><span>&#10005;</span> CLOSE</label>
         <ul class="site-nav__list">
           <li><a href="../">講座一覧</a></li>
           <li><a href="../beginner-guide/">はじめての方へ</a></li>
@@ -36,13 +36,13 @@
           <li><a href="../high-end-flower/">ハイエンド</a></li>
           <li><a href="../sugar-cake/">シュガーケーキ</a></li>
           <li><a href="../faq/">FAQ</a></li>
-          <li><a href="./" class="is-current">募集中</a></li>
+          <li><a href="../current/" class="is-current">募集中</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <nav class="breadcrumb">
+  <nav class="breadcrumb" aria-label="パンくず">
     <div class="breadcrumb__inner">
       <a href="../">講座一覧</a>
       <span class="breadcrumb__sep">›</span>
@@ -50,98 +50,122 @@
     </div>
   </nav>
 
-  <section class="hero hero--subphoto" style="--hero-img: url('../../images/hero-bg.jpg');">
+  <section class="hero hero--subphoto" style="--hero-img: url('../../images/flower-lesson.jpg');">
     <div class="container">
       <div class="hero__inner">
-        <span class="hero__eyebrow eyebrow--italic">Current Lessons</span>
+        <span class="hero__eyebrow eyebrow--italic">Now Recruiting</span>
         <h1 class="hero__title">現在募集中の<br>レッスン</h1>
-        <p class="hero__subtitle">お申し込みいただける講座のご案内</p>
+        <p class="hero__subtitle">参加受付中のレッスン・近日開催予定のレッスン</p>
         <div class="ornament">
           <span class="ornament__line"></span><span class="ornament__dot"></span><span class="ornament__dot"></span><span class="ornament__dot"></span><span class="ornament__line"></span>
         </div>
-        <p class="hero__desc">現在お申し込みいただける講座と、近日募集予定の講座をご案内しています。LINEに登録いただくと、次回募集のご案内を優先的にお届けします。</p>
+        <p class="hero__desc">現在募集受付中のレッスンをご紹介します。定員になり次第、受付を締め切りますのでお早めにご確認ください。</p>
       </div>
     </div>
   </section>
 
+  <!-- 現在募集中 -->
   <section class="bg-white">
     <div class="container">
-      <div class="cs__header anim-fade-up">
-        <span class="eyebrow eyebrow--italic">Open Now</span>
-        <h2 class="section-heading section-heading--center">募集中</h2>
-        <p style="text-align:center; font-size:17px; color:var(--text-mid); margin-bottom:36px;">お申し込みいただける講座</p>
-      </div>
+      <span class="eyebrow eyebrow--italic anim-fade-up">Open for Registration</span>
+      <h2 class="section-heading section-heading--center section-heading--accent anim-fade-up">現在募集中</h2>
 
       <article class="recruit-card anim-fade-up anim-d1">
-        <span class="recruit-card__status recruit-card__status--open">募集中</span>
-        <h3 class="recruit-card__title">ライラック入門レッスン</h3>
-        <p class="recruit-card__meta">開催日 ◯月◯日／対面・オンライン</p>
-        <p class="recruit-card__desc">はじめての方に向いた入口レッスンです。道具やペーストに触れ、シュガーフラワーの楽しさを体験できます。</p>
-        <a href="../flower-lessons/lilac-intro/" class="course-cta">講座詳細を見る</a>
+        <span class="recruit-card__status recruit-card__status--open">受付中</span>
+        <h3 class="recruit-card__title">花ごとのレッスン / ライラック入門</h3>
+        <dl class="recruit-card__info">
+          <dt class="recruit-card__date">日程</dt>
+          <dd>◯月◯日（◯）13:00〜16:00</dd>
+          <dt class="recruit-card__capacity">定員</dt>
+          <dd>残2名</dd>
+          <dt class="recruit-card__price">受講料</dt>
+          <dd>¥7,000（材料費込）</dd>
+          <dt class="recruit-card__note">場所</dt>
+          <dd>ご連絡後にご案内します</dd>
+        </dl>
+        <a href="#" class="recruit-card__cta btn-primary">LINEで申し込む</a>
       </article>
 
       <article class="recruit-card anim-fade-up anim-d2">
-        <span class="recruit-card__status recruit-card__status--open">募集中</span>
+        <span class="recruit-card__status recruit-card__status--open">受付中</span>
         <h3 class="recruit-card__title">シュガーフラワービギナー講座</h3>
-        <p class="recruit-card__meta">開催日 ◯月◯日／全◯回</p>
-        <p class="recruit-card__desc">複数の花と葉を学び、最後はブーケとして仕上げる基礎体系講座です。</p>
-        <a href="../sugar-flower-beginner/" class="course-cta">講座詳細を見る</a>
+        <dl class="recruit-card__info">
+          <dt class="recruit-card__date">開始日</dt>
+          <dd>◯月◯日（◯）より全8回</dd>
+          <dt class="recruit-card__capacity">定員</dt>
+          <dd>残3名</dd>
+          <dt class="recruit-card__price">受講料</dt>
+          <dd>¥45,000（全8回・材料費込）</dd>
+          <dt class="recruit-card__note">場所</dt>
+          <dd>ご連絡後にご案内します</dd>
+        </dl>
+        <a href="#" class="recruit-card__cta btn-primary">LINEで申し込む</a>
       </article>
 
-      <p class="anim-fade-up" style="text-align:center; color:var(--text-light); font-size:14px; margin-top:16px;">※掲載内容は仮のサンプルです。実際の募集内容は最新情報に置き換えてください。</p>
+      <article class="recruit-card anim-fade-up anim-d3">
+        <span class="recruit-card__status recruit-card__status--open">受付中</span>
+        <h3 class="recruit-card__title">ハイエンドフラワー / イングリッシュROSE</h3>
+        <dl class="recruit-card__info">
+          <dt class="recruit-card__date">日程</dt>
+          <dd>◯月◯日（◯）10:00〜14:00</dd>
+          <dt class="recruit-card__capacity">定員</dt>
+          <dd>残1名</dd>
+          <dt class="recruit-card__price">受講料</dt>
+          <dd>¥12,000（材料費込）</dd>
+          <dt class="recruit-card__note">受講条件</dt>
+          <dd>ビギナー講座修了または経験者</dd>
+        </dl>
+        <a href="#" class="recruit-card__cta btn-primary">LINEで申し込む</a>
+      </article>
     </div>
   </section>
 
+  <!-- 近日募集予定 -->
   <section class="bg-ivory">
     <div class="container">
-      <div class="cs__header anim-fade-up">
-        <span class="eyebrow eyebrow--italic">Coming Soon</span>
-        <h2 class="section-heading section-heading--center">近日募集予定</h2>
-        <p style="text-align:center; font-size:17px; color:var(--text-mid); margin-bottom:36px;">次回の募集予定講座</p>
-      </div>
+      <span class="eyebrow eyebrow--italic anim-fade-up">Coming Soon</span>
+      <h2 class="section-heading section-heading--center section-heading--accent anim-fade-up">近日募集予定</h2>
 
       <article class="recruit-card anim-fade-up anim-d1">
-        <span class="recruit-card__status recruit-card__status--soon">近日募集</span>
-        <h3 class="recruit-card__title">ハイエンドROSE</h3>
-        <p class="recruit-card__meta">◯月開講予定</p>
-        <p class="recruit-card__desc">イングリッシュローズ／オースティンローズ系の高難度バラを学ぶ上級レッスン。</p>
-        <a href="../high-end-flower/rose/" class="course-cta">講座詳細を見る</a>
+        <span class="recruit-card__status recruit-card__status--soon">近日募集予定</span>
+        <h3 class="recruit-card__title">花ごとのレッスン / カサブランカ</h3>
+        <dl class="recruit-card__info">
+          <dt class="recruit-card__date">日程</dt>
+          <dd>◯月開催予定</dd>
+          <dt class="recruit-card__note">備考</dt>
+          <dd>LINEにて先行案内中</dd>
+        </dl>
       </article>
 
       <article class="recruit-card anim-fade-up anim-d2">
-        <span class="recruit-card__status recruit-card__status--soon">近日募集</span>
+        <span class="recruit-card__status recruit-card__status--soon">近日募集予定</span>
         <h3 class="recruit-card__title">ハイエンドリース</h3>
-        <p class="recruit-card__meta">◯月開講予定</p>
-        <p class="recruit-card__desc">ハイエンドのお花をリースとして構成する作品制作レッスン。</p>
-        <a href="../high-end-wreath/" class="course-cta">講座詳細を見る</a>
+        <dl class="recruit-card__info">
+          <dt class="recruit-card__date">日程</dt>
+          <dd>◯月以降予定</dd>
+          <dt class="recruit-card__note">備考</dt>
+          <dd>ハイエンドフラワー修了者対象</dd>
+        </dl>
       </article>
     </div>
   </section>
 
+  <!-- 注記 -->
   <section class="bg-white">
     <div class="container">
-      <div class="cs__header anim-fade-up">
-        <span class="eyebrow eyebrow--italic">Closed</span>
-        <h2 class="section-heading section-heading--center">募集終了</h2>
-        <p style="text-align:center; font-size:17px; color:var(--text-mid); margin-bottom:36px;">次回開催をお待ちください</p>
-      </div>
-
-      <article class="recruit-card anim-fade-up" style="opacity:0.7;">
-        <span class="recruit-card__status recruit-card__status--closed">募集終了</span>
-        <h3 class="recruit-card__title">カサブランカ単発レッスン</h3>
-        <p class="recruit-card__meta">◯月開催（終了）</p>
-        <p class="recruit-card__desc">次回開催のご案内はLINEにてお届けします。</p>
-      </article>
+      <p class="note-box anim-fade-up">※掲載の情報はサンプルです。実際の日程・料金は各レッスン開始前にご案内します。最新情報はLINEにてご確認ください。</p>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-bottom">
     <div class="container">
-      <h2 class="cta-bottom__heading anim-fade-up">LINEで、<br class="sp-br">次回募集のご案内を受け取れます。</h2>
-      <p class="cta-bottom__desc anim-fade-up anim-d1">気になる講座がある方、次回募集を逃したくない方は<br>LINEへのご登録をおすすめします。</p>
+      <span class="eyebrow eyebrow--italic anim-fade-up">LINE</span>
+      <h2 class="cta-bottom__heading anim-fade-up">LINEで最新情報を<br class="sp-br">受け取る</h2>
+      <p class="cta-bottom__desc anim-fade-up anim-d1">LINEに登録いただくと、新しいレッスンの募集情報をいち早くお届けします。お気軽にご登録ください。</p>
       <div class="cta-bottom__btns anim-fade-up anim-d2">
-        <a href="#" class="btn-primary">LINEで講座案内を受け取る</a>
-        <a href="../faq/" class="btn-secondary">よくあるご質問を見る</a>
+        <a href="#" class="btn-primary">LINEで登録する</a>
+        <a href="../" class="btn-secondary">全講座一覧を見る</a>
       </div>
     </div>
   </section>
@@ -169,10 +193,9 @@
         <div>
           <p class="site-footer__col-title">案内</p>
           <ul class="site-footer__list">
-            <li><a href="../">講座一覧トップ</a></li>
             <li><a href="../beginner-guide/">はじめての方へ</a></li>
             <li><a href="../faq/">よくあるご質問</a></li>
-            <li><a href="./">現在募集中のレッスン</a></li>
+            <li><a href="../current/">現在募集中のレッスン</a></li>
           </ul>
         </div>
       </div>
@@ -180,27 +203,8 @@
     </div>
   </footer>
 
+  <button class="sf-page-top" id="sf-page-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ページトップへ">↑</button>
   <script src="../../js/main.js"></script>
-
-  <!-- ───── PAGE TOP BUTTON ───── -->
-  <button class="sf-page-top" id="sf-page-top"
-          onclick="window.scrollTo({top:0,behavior:'smooth'})"
-          aria-label="ページトップへ">↑</button>
-
-  <script>
-  /* ── is-scroll: body class when past 50vh ── */
-  (function () {
-    var body = document.body;
-    function onScroll() {
-      if (window.scrollY > window.innerHeight * 0.5) {
-        body.classList.add('is-scroll');
-      } else {
-        body.classList.remove('is-scroll');
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
-  </script>
+  <script>(function(){var body=document.body;function onScroll(){body.classList[window.scrollY>window.innerHeight*.5?'add':'remove']('is-scroll');}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();</script>
 </body>
 </html>

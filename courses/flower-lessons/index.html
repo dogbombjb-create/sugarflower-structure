@@ -4,15 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>花ごとのレッスン｜シュガーフラワー講座</title>
-  <meta name="description" content="ライラック・スイートピー・パンジー・カサブランカなど、花ごとの特徴や難易度に合わせて学べる単発レッスンの一覧です。">
-  <meta property="og:title" content="花ごとのレッスン｜シュガーフラワー講座">
-  <meta property="og:description" content="好きな花から、一輪ずつ学べる入口レッスン。ライラック・スイートピー・パンジー・カサブランカ。">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="../../images/flower-lesson.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="ライラック・スイートピー・パンジー・カサブランカ。好きな花から一輪ずつ学べる単発レッスン。初心者から中級者まで、花ごとの特徴に合わせて選べます。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -27,11 +22,11 @@
       <label for="nav-toggle" class="nav-toggle-label"><span></span><span></span><span></span></label>
       <label for="nav-toggle" class="nav-overlay"></label>
       <nav class="site-nav">
-      <label for="nav-toggle" class="nav-close-btn"><span>&#10005;</span> CLOSE</label>
+        <label for="nav-toggle" class="nav-close-btn"><span>&#10005;</span> CLOSE</label>
         <ul class="site-nav__list">
           <li><a href="../">講座一覧</a></li>
           <li><a href="../beginner-guide/">はじめての方へ</a></li>
-          <li><a href="./" class="is-current">花ごとのレッスン</a></li>
+          <li><a href="../flower-lessons/" class="is-current">花ごとのレッスン</a></li>
           <li><a href="../sugar-flower-beginner/">ビギナー講座</a></li>
           <li><a href="../high-end-flower/">ハイエンド</a></li>
           <li><a href="../sugar-cake/">シュガーケーキ</a></li>
@@ -54,81 +49,230 @@
     <div class="container">
       <div class="hero__inner">
         <span class="hero__eyebrow eyebrow--italic">Flower Lessons</span>
-        <h1 class="hero__title">花ごとのレッスン</h1>
+        <h1 class="hero__title">花ごとの<br>レッスン</h1>
         <p class="hero__subtitle">好きな花から、一輪ずつ学べる入口レッスン</p>
         <div class="ornament">
           <span class="ornament__line"></span><span class="ornament__dot"></span><span class="ornament__dot"></span><span class="ornament__dot"></span><span class="ornament__line"></span>
         </div>
-        <p class="hero__desc">ライラック入門レッスンをはじめ、スイートピー、パンジー、カサブランカなど、花ごとの特徴や難易度に合わせて学べる単発レッスンです。</p>
+        <p class="hero__desc">シュガーフラワーは、砂糖から作る美しい花の工芸です。まずは自分の好きな花を一輪だけ作る体験から始められます。ライラック・スイートピー・パンジー・カサブランカ、4種の花から選んでご参加いただけます。</p>
       </div>
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="container">
-      <div class="note-box anim-fade-up" style="margin-bottom:36px;">花ごとのレッスンは、すべて初心者向けではありません。花によって難易度が異なるため、目的や経験に合わせてお選びください。</div>
+  <div class="pg-marquee" aria-hidden="true">
+    <div class="pg-marquee__track">
+      <span>Sugar Flower Lesson</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Lilac</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Sweet Pea</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Pansy</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Casablanca</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Single Flower</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Handcraft</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Sugar Flower Lesson</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Lilac</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Sweet Pea</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Pansy</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Casablanca</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Single Flower</span>
+      <span class="pg-marquee__sep">·</span>
+      <span>Handcraft</span>
+    </div>
+  </div>
 
-      <div class="flower-grid">
-        <a href="./lilac-intro/" class="flower-card anim-fade-up anim-d1">
-          <div class="flower-card__photo" style="background-image: url('../../images/flower-lesson.jpg');"></div>
-          <div class="flower-card__body">
-            <h3 class="flower-card__title">ライラック入門レッスン</h3>
-            <div class="flower-card__diff"><span class="diff-pill diff-pill--entry">入口向け</span></div>
-            <p class="flower-card__desc">はじめての方に向いた入口レッスン。道具やペーストに触れ、シュガーフラワーの楽しさを体験できます。</p>
-            <p class="flower-card__more">詳しく見る →</p>
-          </div>
-        </a>
+  <section class="pg-intro">
+    <div class="container--wide">
+      <span class="eyebrow eyebrow--italic anim-fade-up">What is Flower Lessons</span>
+      <p class="pg-intro__lead anim-fade-up anim-d1">「花ごとのレッスン」は、シュガーフラワーを初めて体験する方のための入口レッスンです。1回完結で、好きな花を1輪だけ作ります。</p>
+      <p class="pg-intro__sub anim-fade-up anim-d2">花の種類によって難易度が異なります。ライラック・スイートピーは初めての方に適しており、パンジー・カサブランカは少し経験を積んだ方向きです。</p>
+      <ul class="pg-stats anim-fade-up anim-d3">
+        <li class="pg-stat">
+          <span class="pg-stat__num">4</span><span class="pg-stat__unit">種類</span>
+          <span class="pg-stat__label">の花</span>
+        </li>
+        <li class="pg-stat">
+          <span class="pg-stat__num">1</span><span class="pg-stat__unit">日</span>
+          <span class="pg-stat__label">完結</span>
+        </li>
+        <li class="pg-stat">
+          <span class="pg-stat__num">初</span><span class="pg-stat__unit">〜</span>
+          <span class="pg-stat__label">初心者〜中級</span>
+        </li>
+        <li class="pg-stat">
+          <span class="pg-stat__num">各</span><span class="pg-stat__unit">1回</span>
+          <span class="pg-stat__label">完結</span>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-        <a href="./sweetpea/" class="flower-card anim-fade-up anim-d2">
-          <div class="flower-card__photo" style="background: linear-gradient(135deg, #FDE8F0 0%, #F8E0EC 100%); font-size:52px; display:flex; align-items:center; justify-content:center;">🌺</div>
-          <div class="flower-card__body">
-            <h3 class="flower-card__title">スイートピー</h3>
-            <div class="flower-card__diff"><span class="diff-pill diff-pill--entry">入りやすい</span></div>
-            <p class="flower-card__desc">比較的入りやすい花レッスン。花びらの繊細な動きや色合いを学びます。</p>
-            <p class="flower-card__more">詳しく見る →</p>
-          </div>
-        </a>
-
-        <a href="./pansy/" class="flower-card anim-fade-up anim-d3">
-          <div class="flower-card__photo" style="background: linear-gradient(135deg, #EDE8F8 0%, #E8E0F5 100%); font-size:52px; display:flex; align-items:center; justify-content:center;">🌼</div>
-          <div class="flower-card__body">
-            <h3 class="flower-card__title">パンジー</h3>
-            <div class="flower-card__diff"><span class="diff-pill diff-pill--advanced">経験者向け寄り</span></div>
-            <p class="flower-card__desc">細部表現や模様描写があり、経験者向け寄りの花。表現力を深めたい方に。</p>
-            <p class="flower-card__more">詳しく見る →</p>
-          </div>
-        </a>
-
-        <a href="./casablanca/" class="flower-card anim-fade-up anim-d4">
-          <div class="flower-card__photo" style="background: linear-gradient(135deg, #F8F0E8 0%, #F5EAE0 100%); font-size:52px; display:flex; align-items:center; justify-content:center;">🌷</div>
-          <div class="flower-card__body">
-            <h3 class="flower-card__title">カサブランカ</h3>
-            <div class="flower-card__diff"><span class="diff-pill diff-pill--mid">中級向け</span></div>
-            <p class="flower-card__desc">大輪で存在感のある花。立ち姿・花芯・蕾・ダスティングまでを学ぶ中級レッスン。</p>
-            <p class="flower-card__more">詳しく見る →</p>
-          </div>
-        </a>
+  <section class="pg-block pg-block--light" style="background-color:#f9f6f1;">
+    <div class="pg-block__inner container--wide">
+      <div class="pg-block__photo anim-fade-up" style="background-image: url('../../images/flower-lesson.jpg');"></div>
+      <div class="pg-block__body anim-fade-up anim-d1">
+        <span class="pg-block__num">01</span>
+        <span class="pg-block__tag">Entry Level</span>
+        <h2 class="pg-block__heading">ライラック入門レッスン</h2>
+        <p class="pg-block__desc">シュガーフラワーをはじめて体験する方に最も適した入口レッスン。小さな花びらを一枚ずつ形成し、自然な動きをつける練習から始まります。ライラックは多弁の花なので、繰り返し作業の中でペーストの扱い方を身につけられます。</p>
+        <ul class="pg-block__list">
+          <li>シュガーペーストの基本的な扱い方</li>
+          <li>花びらの形成・薄さの調整</li>
+          <li>ワイヤリングと組み立ての基礎</li>
+          <li>1輪の完成まで丁寧にサポート</li>
+        </ul>
+        <a href="./lilac-intro/" class="btn-primary">詳しく見る</a>
       </div>
     </div>
   </section>
 
-  <section class="bg-ivory">
-    <div class="container">
-      <span class="eyebrow eyebrow--italic anim-fade-up">Next Step</span>
-      <h2 class="section-heading section-heading--center section-heading--accent anim-fade-up anim-d1">単発レッスンの先へ</h2>
-      <p class="anim-fade-up anim-d2" style="text-align:center; font-size:17px; color:var(--text-mid); line-height:1.9;">花ごとのレッスンで体験した後は、複数の花と葉を学び、ブーケとして仕上げる「シュガーフラワービギナー講座」へ進むことができます。</p>
-      <div class="anim-fade-up anim-d3" style="text-align:center; margin-top:24px;">
-        <a href="../sugar-flower-beginner/" class="btn-primary">シュガーフラワービギナー講座を見る</a>
+  <section class="pg-block pg-block--rev pg-block--dark">
+    <div class="pg-block__inner container--wide">
+      <div class="pg-block__photo anim-fade-up" style="background-image: url('../../images/beginner.png'); background-size: contain; background-color: #0e0a12;"></div>
+      <div class="pg-block__body anim-fade-up anim-d1">
+        <span class="pg-block__num">02</span>
+        <span class="pg-block__tag">For Beginners</span>
+        <h2 class="pg-block__heading">スイートピーレッスン</h2>
+        <p class="pg-block__desc">繊細に波打つ花びらが特徴のスイートピー。薄く伸ばしたペーストにフリルをつける技術を学びます。形成自体はライラックより少し複雑ですが、完成したときの繊細さが魅力のレッスンです。</p>
+        <ul class="pg-block__list">
+          <li>薄くしなやかな花びらの形成</li>
+          <li>フリルをつける技術の習得</li>
+          <li>自然な曲線と動きの表現</li>
+          <li>2〜3輪を組み合わせて仕上げ</li>
+        </ul>
+        <a href="./sweetpea/" class="btn-primary">詳しく見る</a>
       </div>
+    </div>
+  </section>
+
+  <section class="pg-block pg-block--ivory">
+    <div class="pg-block__inner container--wide">
+      <div class="pg-block__photo anim-fade-up" style="background-image: url('../../images/highend-flower.jpg');"></div>
+      <div class="pg-block__body anim-fade-up anim-d1">
+        <span class="pg-block__num">03</span>
+        <span class="pg-block__tag">Intermediate</span>
+        <h2 class="pg-block__heading">パンジーレッスン</h2>
+        <p class="pg-block__desc">大きく広がる5枚の花びらに、ベルベット調の模様を描くパンジー。ダスティング（着色）技術が求められる、表現力の高いレッスンです。少し経験を積んだ方に向いています。</p>
+        <ul class="pg-block__list">
+          <li>5枚の花びらを均整よく形成</li>
+          <li>ブラシを使ったダスティング技法</li>
+          <li>中心部の模様描写</li>
+          <li>茎と葉を加えた完成形へ</li>
+        </ul>
+        <a href="./pansy/" class="btn-primary">詳しく見る</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-block pg-block--rev pg-block--dark">
+    <div class="pg-block__inner container--wide">
+      <div class="pg-block__photo anim-fade-up" style="background-image: url('../../images/wedding-cake.jpg');"></div>
+      <div class="pg-block__body anim-fade-up anim-d1">
+        <span class="pg-block__num">04</span>
+        <span class="pg-block__tag">Mid-Advanced</span>
+        <h2 class="pg-block__heading">カサブランカレッスン</h2>
+        <p class="pg-block__desc">大輪で圧倒的な存在感を持つカサブランカ。6枚の大きな花びら、長いしべ、つぼみまで作り上げる中級向けレッスンです。完成作品の美しさと達成感は格別です。</p>
+        <ul class="pg-block__list">
+          <li>大型花びらの形成とカーブ付け</li>
+          <li>複数のしべ・花芯の制作</li>
+          <li>つぼみと葉のアレンジ</li>
+          <li>ダスティングで立体感を演出</li>
+        </ul>
+        <a href="./casablanca/" class="btn-primary">詳しく見る</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-gallery">
+    <div class="container--wide">
+      <span class="eyebrow eyebrow--italic anim-fade-up">Work Samples</span>
+      <h2 class="pg-gallery__heading anim-fade-up anim-d1">作品ギャラリー</h2>
+      <div class="pg-gallery__grid work-gallery__grid anim-fade-up anim-d2">
+        <div class="pg-gallery__item work-gallery__item">
+          <img src="../../images/flower-lesson.jpg" alt="ライラック作品" loading="lazy">
+        </div>
+        <div class="pg-gallery__item work-gallery__item">
+          <img src="../../images/beginner.png" alt="スイートピー作品" loading="lazy">
+        </div>
+        <div class="pg-gallery__item work-gallery__item">
+          <img src="../../images/highend-flower.jpg" alt="パンジー作品" loading="lazy">
+        </div>
+        <div class="pg-gallery__item work-gallery__item">
+          <img src="../../images/wedding-cake.jpg" alt="カサブランカ作品" loading="lazy">
+        </div>
+        <div class="pg-gallery__item work-gallery__item">
+          <img src="../../images/flower-lesson.jpg" alt="シュガーフラワー作品" loading="lazy">
+        </div>
+        <div class="pg-gallery__item work-gallery__item">
+          <img src="../../images/beginner.png" alt="シュガーフラワー作品" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-faq">
+    <div class="container">
+      <h2 class="pg-faq__heading anim-fade-up">よくあるご質問</h2>
+      <div class="pg-faq__list">
+        <details class="faq-item anim-fade-up anim-d1">
+          <summary class="faq-q">
+            <span class="faq-q__mark">Q</span>
+            <span class="faq-q__text">経験がまったくなくても参加できますか？</span>
+          </summary>
+          <p class="faq-a">ライラックとスイートピーは初心者向けです。パンジーとカサブランカは少し経験があると安心ですが、丁寧にサポートします。</p>
+        </details>
+        <details class="faq-item anim-fade-up anim-d2">
+          <summary class="faq-q">
+            <span class="faq-q__mark">Q</span>
+            <span class="faq-q__text">道具や材料は持参が必要ですか？</span>
+          </summary>
+          <p class="faq-a">必要な道具・材料はすべてご用意しています。手ぶらでお越しいただけます。ただし、動きやすい服装でお越しください。</p>
+        </details>
+        <details class="faq-item anim-fade-up anim-d3">
+          <summary class="faq-q">
+            <span class="faq-q__mark">Q</span>
+            <span class="faq-q__text">1日で完成しますか？</span>
+          </summary>
+          <p class="faq-a">はい。各レッスンは1回完結です。所要時間はおよそ2〜3時間を予定しています。</p>
+        </details>
+        <details class="faq-item anim-fade-up anim-d4">
+          <summary class="faq-q">
+            <span class="faq-q__mark">Q</span>
+            <span class="faq-q__text">複数の花を同じ日に受講できますか？</span>
+          </summary>
+          <p class="faq-a">同日での複数受講は難しいため、別日程でのご参加をお願いしています。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-next">
+    <div class="container">
+      <span class="pg-next__label anim-fade-up">Next Step</span>
+      <h2 class="pg-next__heading anim-fade-up anim-d1">次のステップへ</h2>
+      <p class="pg-next__desc anim-fade-up anim-d2">花ごとのレッスンで感触をつかんだら、複数の花と葉を学び、ブーケとして仕上げる「ビギナー講座」へ進むことができます。</p>
+      <a href="../sugar-flower-beginner/" class="btn-secondary anim-fade-up anim-d3">ビギナー講座を見る</a>
     </div>
   </section>
 
   <section class="cta-bottom">
     <div class="container">
-      <h2 class="cta-bottom__heading anim-fade-up">現在募集中の<br class="sp-br">レッスンをご確認ください。</h2>
-      <div class="cta-bottom__btns anim-fade-up anim-d1">
-        <a href="../current/" class="btn-primary">募集中のレッスンを見る</a>
-        <a href="#" class="btn-secondary">LINEで講座案内を受け取る</a>
+      <span class="eyebrow eyebrow--italic anim-fade-up">Reservation</span>
+      <h2 class="cta-bottom__heading anim-fade-up anim-d1">レッスンのご予約・お問い合わせ</h2>
+      <p class="cta-bottom__desc anim-fade-up anim-d2">現在募集中のレッスンをご確認ください。ご不明な点はLINEでお気軽にご相談いただけます。</p>
+      <div class="cta-bottom__btns anim-fade-up anim-d3">
+        <a href="../current/" class="btn-primary">現在募集中のレッスンを見る</a>
+        <a href="#" class="btn-secondary">LINEで相談する</a>
       </div>
     </div>
   </section>
@@ -140,7 +284,7 @@
         <div>
           <p class="site-footer__col-title">講座カテゴリー</p>
           <ul class="site-footer__list">
-            <li><a href="./">花ごとのレッスン</a></li>
+            <li><a href="../flower-lessons/">花ごとのレッスン</a></li>
             <li><a href="../sugar-flower-beginner/">ビギナー講座</a></li>
             <li><a href="../high-end-flower/">ハイエンドフラワー</a></li>
             <li><a href="../high-end-wreath/">ハイエンドリース</a></li>
@@ -156,7 +300,6 @@
         <div>
           <p class="site-footer__col-title">案内</p>
           <ul class="site-footer__list">
-            <li><a href="../">講座一覧トップ</a></li>
             <li><a href="../beginner-guide/">はじめての方へ</a></li>
             <li><a href="../faq/">よくあるご質問</a></li>
             <li><a href="../current/">現在募集中のレッスン</a></li>
@@ -167,26 +310,13 @@
     </div>
   </footer>
 
+  <button class="sf-page-top" id="sf-page-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ページトップへ">↑</button>
   <script src="../../js/main.js"></script>
-
-  <!-- ───── PAGE TOP BUTTON ───── -->
-  <button class="sf-page-top" id="sf-page-top"
-          onclick="window.scrollTo({top:0,behavior:'smooth'})"
-          aria-label="ページトップへ">↑</button>
-
   <script>
-  /* ── is-scroll: body class when past 50vh ── */
-  (function () {
-    var body = document.body;
-    function onScroll() {
-      if (window.scrollY > window.innerHeight * 0.5) {
-        body.classList.add('is-scroll');
-      } else {
-        body.classList.remove('is-scroll');
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+  (function(){
+    var body=document.body;
+    function onScroll(){body.classList[window.scrollY>window.innerHeight*.5?'add':'remove']('is-scroll');}
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   })();
   </script>
 </body>
