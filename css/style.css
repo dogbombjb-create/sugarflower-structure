@@ -3999,7 +3999,7 @@ body.is-entrance .courses-sticky-wrap__deco {
   justify-content: center;
   padding: 0 0 0 24px;
   border-left: 1px solid var(--border);
-  background: var(--cream);
+  background: var(--ivory);
   gap: 0;
   /* Entrance */
   opacity: 0;
@@ -4147,15 +4147,20 @@ body.is-entrance .courses-sticky-wrap__side {
     min-width: 0 !important;
     max-width: none !important;
     padding: 10px 10px 14px !important;
-    background: #fff !important;
-    color: var(--text-dark) !important;
+    background: #faf7f3 !important;
+    color: #38303e !important;
     text-align: left !important;
     flex: 1;
   }
+  /* ライトカード: グローバルの白リンク色を暗色に上書き */
+  .editorial-item:not(.editorial-item--dark):not(.editorial-item--goal) .editorial-link {
+    color: #38303e !important;
+  }
+  /* ダークカード・ゴールカード: 背景を明示ダーク色に (--cream 未定義問題を回避) */
   .editorial-item--dark .editorial-item__body,
   .editorial-item--goal .editorial-item__body {
-    background: var(--cream) !important;
-    color: var(--text-dark) !important;
+    background: #1a0e2a !important;
+    color: rgba(255,255,255,0.90) !important;
   }
 
   /* 大型装飾ナンバー非表示 */
@@ -4177,6 +4182,8 @@ body.is-entrance .courses-sticky-wrap__side {
     margin-bottom: 8px;
     letter-spacing: 0;
   }
+  /* 改行タグ非表示 (狭いカードでは自動折り返しに任せる) */
+  .editorial-item .editorial-title br { display: none !important; }
 
   /* 詳細リスト・完成作品は省略 */
   .editorial-list   { display: none; }
