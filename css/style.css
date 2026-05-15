@@ -4152,7 +4152,11 @@ body.is-entrance .courses-sticky-wrap__side {
     text-align: left !important;
     flex: 1;
   }
-  /* ライトカード: グローバルの白リンク色を暗色に上書き */
+  /* ライトカード: グローバルの白テキスト色を暗色に上書き
+     (.editorial-title が color:#fff / .editorial-link が rgba(255,255,255,...) でグローバル設定されているため) */
+  .editorial-item:not(.editorial-item--dark):not(.editorial-item--goal) .editorial-title {
+    color: #38303e !important;
+  }
   .editorial-item:not(.editorial-item--dark):not(.editorial-item--goal) .editorial-link {
     color: #38303e !important;
   }
