@@ -4095,3 +4095,136 @@ body.is-entrance .courses-sticky-wrap__side {
     display: none;
   }
 }
+
+/* ================================================================
+   SP COURSE CARD GRID — 2-column compact cards on mobile
+   (courses/index.html の editorial-item をカード化)
+   ================================================================ */
+@media (max-width: 767px) {
+
+  /* 2-col grid */
+  .editorial-courses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 16px;
+    background: var(--ivory);
+  }
+
+  /* Card shell */
+  .editorial-item {
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  /* Thumbnail — position:relative でフロー内に */
+  .editorial-item__photo {
+    position: relative !important;
+    inset: auto !important;
+    height: 108px !important;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .editorial-item__photo::after {
+    background: rgba(12,6,22,0.30) !important;
+  }
+  .editorial-item--dark .editorial-item__photo {
+    background-color: #0e0a12;
+  }
+
+  /* Card body — photo 下に static 配置 */
+  .editorial-item__body {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 10px 10px 14px !important;
+    background: #fff !important;
+    color: var(--text-dark) !important;
+    text-align: left !important;
+    flex: 1;
+  }
+  .editorial-item--dark .editorial-item__body,
+  .editorial-item--goal .editorial-item__body {
+    background: var(--cream) !important;
+    color: var(--text-dark) !important;
+  }
+
+  /* 大型装飾ナンバー非表示 */
+  .editorial-num { display: none !important; }
+
+  /* Tag */
+  .editorial-tag {
+    font-size: 8px;
+    padding: 2px 6px;
+    margin-bottom: 5px;
+    color: var(--gold);
+    border-color: rgba(200,164,100,0.45);
+  }
+
+  /* Title */
+  .editorial-title {
+    font-size: 13px !important;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    letter-spacing: 0;
+  }
+
+  /* 詳細リスト・完成作品は省略 */
+  .editorial-list   { display: none; }
+  .editorial-result { display: none; }
+
+  /* Link */
+  .editorial-link {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    padding: 5px 8px;
+    gap: 4px;
+  }
+}
+
+/* ================================================================
+   SP PG-STATS — 2×2 grid + num+unit インライン表示
+   ================================================================ */
+@media (max-width: 600px) {
+  .pg-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  /* 各 stat: num+unit 横並び、label は下段 */
+  .pg-stat {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 4px;
+    padding: 10px 12px;
+    background: rgba(0,0,0,0.025);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .pg-stat__num {
+    font-size: clamp(20px, 5.5vw, 28px);
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .pg-stat__unit {
+    font-size: 12px;
+    align-self: flex-end;
+    margin-bottom: 1px;
+  }
+  .pg-stat__label {
+    width: 100%;
+    font-size: 10px;
+    margin-top: 2px;
+    color: var(--body-light);
+  }
+}
